@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A2F14"/>
+      <stop offset="50%" stop-color="#1B1B1B"/>
+      <stop offset="100%" stop-color="#121212"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Ambient glow -->
+  <circle cx="950" cy="200" r="300" fill="#C49A2C" opacity="0.12" filter="blur(80px)"/>
+
+  <!-- Logo Insignia -->
+  <g transform="translate(80, 70)">
+    <svg viewBox="194 244 268 238" width="80" height="80">
+      <ellipse cx="325" cy="364" rx="122" ry="106" stroke="#C49A2C" stroke-width="16" fill="none"/>
+      <ellipse cx="343" cy="356" rx="106" ry="98" transform="rotate(-12 343 356)" stroke="#C49A2C" stroke-width="16" fill="none"/>
+      <line x1="315" y1="362" x2="452" y2="474" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round"/>
+    </svg>
+    <text x="100" y="45" fill="#FFFFFF" font-family="Poppins, sans-serif" font-size="36" font-weight="600" letter-spacing="6">QELVORA</text>
+    <text x="102" y="72" fill="#E3C46A" font-family="Poppins, sans-serif" font-size="13" font-weight="600" letter-spacing="10">TECHNOLOGIES</text>
+  </g>
+
+  <!-- Tagline and headline -->
+  <text x="80" y="270" fill="#FFFFFF" font-family="Poppins, sans-serif" font-size="52" font-weight="300" letter-spacing="-1">Innovation Today, Advancing Tomorrow.</text>
+  <text x="80" y="340" fill="#D4C7A3" font-family="Poppins, sans-serif" font-size="24" font-weight="400">Custom Business Software • CRM Platforms • School &amp; College ERP</text>
+
+  <!-- Key points -->
+  <g transform="translate(80, 420)">
+    <rect width="320" height="60" rx="8" fill="#1E1E22" stroke="rgba(196,154,44,0.3)"/>
+    <text x="24" y="36" fill="#E3C46A" font-family="Poppins, sans-serif" font-size="16" font-weight="500">Qelvora CRM &amp; Pipeline</text>
+
+    <rect x="340" width="320" height="60" rx="8" fill="#1E1E22" stroke="rgba(196,154,44,0.3)"/>
+    <text x="364" y="36" fill="#E3C46A" font-family="Poppins, sans-serif" font-size="16" font-weight="500">K-12 School ERP</text>
+
+    <rect x="680" width="340" height="60" rx="8" fill="#1E1E22" stroke="rgba(196,154,44,0.3)"/>
+    <text x="704" y="36" fill="#E3C46A" font-family="Poppins, sans-serif" font-size="16" font-weight="500">College &amp; University ERP</text>
+  </g>
+
+  <!-- Divider & Footer -->
+  <line x1="80" y1="540" x2="1120" y2="540" stroke="rgba(227, 196, 106, 0.2)"/>
+  <text x="80" y="580" fill="#999999" font-family="Poppins, sans-serif" font-size="16">Thanisandra, Bengaluru, Karnataka • qelvora.in</text>
+  <text x="1120" y="580" text-anchor="end" fill="#E3C46A" font-family="Poppins, sans-serif" font-size="16" font-weight="500">+91 99161 02542</text>
+</svg>

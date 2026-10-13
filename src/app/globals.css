@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #17171A;
+  --color-black: #121212;
+  --color-charcoal: #1B1B1B;
+  --color-warm-dark: #3A2F14;
+  --color-gold: #C49A2C;
+  --color-gold-light: #E3C46A;
+  --color-gold-text: #7F5F0E;
+  --color-soft-ivory: #F7F4EC;
+  --color-muted: #5A5852;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --foreground: #F7F4EC;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Accessible focus outline */
+*:focus-visible {
+  outline: 2px solid #C49A2C;
+  outline-offset: 2px;
+}
+
+/* Hairline dividers */
+.hairline-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(196, 154, 44, 0.25) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(196, 154, 44, 0.25) 100%);
+}
+
+.hairline-divider-light {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(196, 154, 44, 0.25) 0%, rgba(0, 0, 0, 0.08) 50%, rgba(196, 154, 44, 0.25) 100%);
+}
+
+/* Fluid type utility clamp */
+.text-fluid-display {
+  font-size: clamp(2.35rem, 5vw + 0.5rem, 4.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.text-fluid-h1 {
+  font-size: clamp(1.9rem, 3.5vw + 0.5rem, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.text-fluid-h2 {
+  font-size: clamp(1.5rem, 2.5vw + 0.3rem, 2.25rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+/* Signature gold gradient on cards and dark sections */
+.bg-signature-shade {
+  background: linear-gradient(100deg, #3A2F14 0%, #121212 50%);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
