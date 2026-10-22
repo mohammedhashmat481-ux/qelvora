@@ -1,254 +1,214 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
-import { Heading } from "@/components/ui/Heading";
-import { Button } from "@/components/ui/Button";
-import { Accordion } from "@/components/ui/Accordion";
 import { CollegeErpMockup } from "@/components/mockups/CollegeErpMockup";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { productsData } from "@/data/products";
 import { siteConfig } from "@/data/site";
 import {
   CheckCircle2,
+  ChevronDown,
+  Users,
   Phone,
   MessageCircle,
-  AlertOctagon,
-  Target,
-  GraduationCap,
 } from "lucide-react";
 
-const collegeData = productsData.find((p) => p.id === "college-erp")!;
+const college = productsData.find((p) => p.id === "college-erp")!;
 
 export const metadata: Metadata = {
-  title: "Qelvora College ERP — CBCS Credits, Internal Marks & Placements",
+  title: "Qelvora College ERP — Admissions, Marks, Placements & Campus Management",
   description:
-    "End-to-end ERP platform for degree colleges and autonomous universities. Manage semester credits, university marks exports, government scholarship ledgers, and placement drives.",
-  alternates: {
-    canonical: `${siteConfig.url}/products/college-erp`,
-  },
+    "College ERP for degree colleges, autonomous institutions, and polytechnics. Manage CBCS credits, internal marks, scholarships, placements, and alumni in one system.",
+  alternates: { canonical: `${siteConfig.url}/products/college-erp` },
 };
 
-export default function CollegeErpPage() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: collegeData.faqs.map((f) => ({
-      "@type": "Question",
-      name: f.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: f.answer,
-      },
-    })),
-  };
+function FaqItem({ q, a }: { q: string; a: string }) {
+  return (
+    <details className="group border-b border-white/8 last:border-0 py-4">
+      <summary className="flex items-center justify-between text-sm text-white hover:text-[#E3C46A] cursor-pointer list-none font-medium transition-colors gap-4">
+        <span>{q}</span>
+        <ChevronDown className="w-4 h-4 shrink-0 text-zinc-500 group-open:rotate-180 group-open:text-[#C49A2C] transition-transform duration-200" />
+      </summary>
+      <p className="pt-3 text-sm text-zinc-400 leading-relaxed">{a}</p>
+    </details>
+  );
+}
 
+export default function CollegeErpPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
-      {/* Product Hero */}
-      <Section variant="shade" spacing="hero" className="border-b border-white/10">
-        <Container size="default">
-          <div className="space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-gold-light text-xs font-medium">
-              <GraduationCap className="w-3.5 h-3.5" />
-              <span>{collegeData.badge}</span>
-            </div>
-
-            <div className="space-y-3">
-              <h1 className="text-fluid-display font-light text-white tracking-tight">
-                {collegeData.name}
+      {/* Hero */}
+      <section
+        className="relative pt-32 pb-20 sm:pt-40 sm:pb-24 px-4"
+        style={{
+          background:
+            "linear-gradient(135deg, #3A2F14 0%, #1a1a1c 45%, #111113 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(196,154,44,0.08) 0%, transparent 70%)",
+          }}
+        />
+        <div className="max-w-6xl mx-auto relative space-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-[#E3C46A] font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#C49A2C]" />
+                {college.badge}
+              </div>
+              <h1 className="text-4xl sm:text-5xl font-light text-white leading-tight tracking-tight">
+                {college.name}
               </h1>
-              <p className="text-xl sm:text-2xl font-light text-gold-light">
-                {collegeData.tagline}
-              </p>
+              <p className="text-lg text-[#E3C46A]">{college.tagline}</p>
+              <p className="text-base text-zinc-400 leading-relaxed">{college.summary}</p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <a
+                  href="#request-demo"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-medium transition-colors"
+                >
+                  Request a demo
+                </a>
+                <a
+                  href={siteConfig.whatsapp.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp
+                </a>
+              </div>
             </div>
+            <div className="w-full overflow-hidden rounded-xl border border-white/8">
+              <CollegeErpMockup />
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <p className="text-base sm:text-lg text-neutral-300 max-w-[65ch] leading-relaxed">
-              {collegeData.summary}
+      {/* Who it's for */}
+      <section className="px-4 py-16 sm:py-20 bg-[#18181B]">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-light text-white">Which colleges use this?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {college.targetAudience.map((t) => (
+              <div key={t} className="flex items-start gap-2.5 p-4 rounded-xl bg-[#141416] border border-white/8">
+                <Users className="w-4 h-4 text-[#C49A2C] shrink-0 mt-0.5" />
+                <span className="text-sm text-zinc-300 leading-snug">{t}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Problems */}
+      <section className="px-4 py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-light text-white">Problems this solves</h2>
+          <div className="space-y-3">
+            {college.problemsSolved.map((p) => (
+              <div key={p} className="flex items-start gap-3 py-3 border-b border-white/8">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500/70 shrink-0 mt-2" />
+                <span className="text-sm text-zinc-400 leading-relaxed">{p}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Highlights */}
+      <section className="px-4 py-16 sm:py-20 bg-[#18181B]">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-light text-white">Key features</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {college.keyHighlights.map((h) => (
+              <div key={h} className="flex items-start gap-3 p-4 rounded-xl bg-[#141416] border border-white/8">
+                <CheckCircle2 className="w-4 h-4 text-[#C49A2C] shrink-0 mt-0.5" />
+                <span className="text-sm text-zinc-300 leading-relaxed">{h}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Modules */}
+      <section className="px-4 py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-light text-white">Modules included</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {college.modules.map((mod) => (
+              <div key={mod.name} className="p-5 rounded-xl bg-[#18181B] border border-white/8 space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-sm bg-[#C49A2C]" />
+                  <h3 className="text-sm font-medium text-white">{mod.name}</h3>
+                </div>
+                <p className="text-xs text-zinc-500 leading-relaxed">{mod.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="px-4 py-16 sm:py-20 bg-[#18181B]">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-light text-white">Frequently asked</h2>
+          <div className="bg-[#141416] rounded-xl border border-white/8 px-5">
+            {college.faqs.map((f) => (
+              <FaqItem key={f.question} q={f.question} a={f.answer} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Demo form */}
+      <section
+        id="request-demo"
+        className="px-4 py-16 sm:py-24"
+        style={{
+          background:
+            "linear-gradient(135deg, #3A2F14 0%, #1a1a1c 50%, #111113 100%)",
+        }}
+      >
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="space-y-5">
+            <h2 className="text-3xl sm:text-4xl font-light text-white leading-tight">
+              See Qelvora College ERP running your campus.
+            </h2>
+            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+              We&apos;ll walk through the admissions flow, internal marks, and
+              placement module using a setup modelled after your
+              institution&apos;s structure.
             </p>
-
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Button href="#demo-form" variant="primary" size="lg">
-                Schedule institutional demo
-              </Button>
+            <div className="space-y-3 pt-2">
+              <a
+                href={siteConfig.phones.primary.tel}
+                className="inline-flex items-center gap-2 text-sm text-white hover:text-[#E3C46A] transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[#C49A2C]" />
+                {siteConfig.phones.primary.formatted}
+              </a>
+              <br />
               <a
                 href={siteConfig.whatsapp.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp inquiry</span>
+                WhatsApp us
               </a>
             </div>
           </div>
-
-          {/* Interactive UI Mockup */}
-          <div className="mt-14 max-w-5xl mx-auto">
-            <CollegeErpMockup />
-          </div>
-        </Container>
-      </Section>
-
-      {/* Who it is for & Problems solved */}
-      <Section variant="light" spacing="lg">
-        <Container size="default">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Who it is for */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-amber-500/10 text-gold-text-on-light flex items-center justify-center">
-                  <Target className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium text-gold-text-on-light uppercase tracking-wider">
-                    Institutional Fit
-                  </p>
-                  <h2 className="text-xl sm:text-2xl font-medium text-qtext">
-                    Who Qelvora College ERP is engineered for
-                  </h2>
-                </div>
-              </div>
-
-              <ul className="space-y-3">
-                {collegeData.targetAudience.map((audience, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-qmuted">
-                    <CheckCircle2 className="w-4 h-4 text-gold-text-on-light shrink-0 mt-0.5" />
-                    <span>{audience}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Problems it solves */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-amber-500/10 text-gold-text-on-light flex items-center justify-center">
-                  <AlertOctagon className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium text-gold-text-on-light uppercase tracking-wider">
-                    Administrative Obstacles
-                  </p>
-                  <h2 className="text-xl sm:text-2xl font-medium text-qtext">
-                    The problems it eliminates
-                  </h2>
-                </div>
-              </div>
-
-              <ul className="space-y-3">
-                {collegeData.problemsSolved.map((prob, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-qmuted">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold-text-on-light shrink-0 mt-2" />
-                    <span>{prob}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* College Modules List */}
-      <Section variant="charcoal" spacing="lg" hasTopBorder>
-        <Container size="default">
-          <div className="text-left space-y-3 mb-12">
-            <p className="text-xs font-medium text-gold-light uppercase tracking-wider">
-              Academic &amp; Administrative System
-            </p>
-            <Heading as="h2" size="h1" theme="dark">
-              Higher education modules built for compliance
-            </Heading>
-            <p className="text-sm sm:text-base text-neutral-300 max-w-[65ch]">
-              Engineered to support National Education Policy (NEP) multi-disciplinary frameworks and university affiliation requirements.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {collegeData.modules.map((module, i) => (
-              <div
-                key={i}
-                className="p-6 rounded-panel bg-black/40 border border-white/10 space-y-3 hover:border-gold/40 transition-colors"
-              >
-                <div className="text-xs font-mono text-gold-light">0{i + 1}</div>
-                <h3 className="text-base sm:text-lg font-medium text-white">
-                  {module.name}
-                </h3>
-                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
-                  {module.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* FAQ Accordion */}
-      <Section variant="light" spacing="lg">
-        <Container size="narrow">
-          <div className="text-left space-y-3 mb-10">
-            <p className="text-xs font-medium text-gold-text-on-light uppercase tracking-wider">
-              Dean &amp; Administrator FAQ
-            </p>
-            <Heading as="h2" size="h2" theme="light">
-              Frequently asked questions about College ERP
-            </Heading>
-          </div>
-
-          <Accordion items={collegeData.faqs} theme="light" />
-        </Container>
-      </Section>
-
-      {/* Demo Form */}
-      <Section id="demo-form" variant="shade" spacing="lg" className="border-t border-white/10">
-        <Container size="default">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5 space-y-6">
-              <span className="text-xs uppercase tracking-wider text-gold-light font-medium">
-                Autonomous &amp; University Setup
-              </span>
-              <h2 className="text-3xl font-light text-white tracking-tight">
-                Request a college software demonstration
-              </h2>
-              <p className="text-sm text-neutral-300 leading-relaxed">
-                We can demonstrate credit rule configuration, internal assessment consolidation, and placement cell filtration using your exact department scheme.
-              </p>
-
-              <div className="p-4 rounded-panel bg-black/40 border border-white/10 space-y-2 text-xs text-neutral-300">
-                <p className="font-semibold text-white">What we evaluate together:</p>
-                <ul className="space-y-1.5 list-disc list-inside text-neutral-400">
-                  <li>Your university or autonomous credit structure</li>
-                  <li>SSP/NSP government scholarship adjustment flows</li>
-                  <li>Placement portal resume requirements and company recruiter access</li>
-                </ul>
-              </div>
-
-              <div className="pt-2">
-                <p className="text-xs text-neutral-400">Connect with our collegiate team:</p>
-                <a
-                  href={siteConfig.phones.primary.tel}
-                  className="text-base font-mono font-medium text-gold-light hover:underline mt-1 inline-flex items-center gap-2"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>{siteConfig.phones.primary.formatted}</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7">
-              <ContactForm
-                initialProductInterest="Qelvora College ERP"
-                formTitle="Request a College ERP Walkthrough"
-              />
-            </div>
-          </div>
-        </Container>
-      </Section>
+          <ContactForm
+            formTitle="Request a College ERP demo"
+            initialProductInterest="Qelvora College ERP"
+          />
+        </div>
+      </section>
     </>
   );
 }

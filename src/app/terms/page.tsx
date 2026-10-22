@@ -1,74 +1,93 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
-import { Heading } from "@/components/ui/Heading";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Qelvora Technologies",
-  description: "Standard terms of service template for Qelvora Technologies website and software proposals.",
-  alternates: {
-    canonical: `${siteConfig.url}/terms`,
-  },
+  description: "Terms of service for Qelvora Technologies software products and website.",
+  alternates: { canonical: `${siteConfig.url}/terms` },
 };
 
+// TODO: Have this reviewed by a legal professional before publishing.
 export default function TermsPage() {
   return (
-    <>
-      <Section variant="shade" spacing="hero" className="border-b border-white/10">
-        <Container size="narrow">
-          <div className="space-y-4 text-left">
-            <span className="text-xs uppercase tracking-wider text-gold-light font-medium">
-              Legal &amp; Compliance
-            </span>
-            <h1 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
-              Terms of Service
-            </h1>
-            <p className="text-xs sm:text-sm text-neutral-300">
-              Last updated: October 2026 • <em>(Standard Terms Template)</em>
+    <section className="pt-32 pb-20 px-4">
+      <div className="max-w-3xl mx-auto space-y-10">
+        <div className="space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-400 font-medium">
+            Template — requires legal review
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-light text-white">Terms of Service</h1>
+          <p className="text-zinc-500 text-sm">
+            Last updated: {new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}
+          </p>
+        </div>
+
+        <div className="space-y-8 text-sm text-zinc-400 leading-relaxed">
+          <div className="space-y-3">
+            <h2 className="text-white text-base font-medium">1. Agreement to terms</h2>
+            <p>
+              By accessing or using the Qelvora Technologies website at{" "}
+              <a href={siteConfig.url} className="text-[#E3C46A] hover:underline">
+                {siteConfig.url}
+              </a>
+              , you agree to be bound by these Terms of Service.
             </p>
           </div>
-        </Container>
-      </Section>
 
-      <Section variant="light" spacing="lg">
-        <Container size="narrow">
-          <div className="prose prose-neutral max-w-none text-sm text-qmuted leading-relaxed space-y-6">
-            <div className="p-4 rounded-md bg-amber-50 border border-amber-200 text-xs text-amber-900">
-              <strong>Template Notice:</strong> These terms govern the general use of <code>qelvora.in</code>. All commercial engagements, software licensing, ERP deployments, and custom development projects are executed under mutually signed Statements of Work (SOWs) specifying deliverables, payment milestones, and warranty scopes.
-            </div>
-
-            <div className="space-y-3">
-              <h2 className="text-lg font-medium text-qtext">1. Scope of Website</h2>
-              <p>
-                The website <code>qelvora.in</code> is operated by Qelvora Technologies, Bengaluru. Materials, software descriptions, and product feature lists presented on this website are provided for informational and preliminary evaluation purposes.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h2 className="text-lg font-medium text-qtext">2. Intellectual Property</h2>
-              <p>
-                The &ldquo;Qelvora&rdquo; wordmark, Q-mark insignia, bespoke software UI mockups, and website source code are the intellectual property of Qelvora Technologies. Custom code developed under bespoke client contracts is transferred to the respective client according to the contractual terms of that engagement.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h2 className="text-lg font-medium text-qtext">3. Quotations &amp; Proposals</h2>
-              <p>
-                Any preliminary pricing discussions, demo estimates, or proposals provided verbally or electronically are valid for 30 calendar days from the date of issue unless specified otherwise in writing.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h2 className="text-lg font-medium text-qtext">4. Governing Law &amp; Jurisdiction</h2>
-              <p>
-                These terms and any disputes relating to Qelvora Technologies shall be governed by and construed in accordance with the laws of the Republic of India, under the jurisdiction of the courts located in Bengaluru, Karnataka.
-              </p>
-            </div>
+          <div className="space-y-3">
+            <h2 className="text-white text-base font-medium">2. Use of our website</h2>
+            <p>
+              You may use this website to learn about our services and contact us with
+              inquiries. You may not use this website for any unlawful purpose, to impersonate
+              us, or to submit false or misleading information.
+            </p>
           </div>
-        </Container>
-      </Section>
-    </>
+
+          <div className="space-y-3">
+            <h2 className="text-white text-base font-medium">3. Intellectual property</h2>
+            <p>
+              All content on this website — including text, code mockups, and graphics — is
+              the property of Qelvora Technologies. You may not reproduce or redistribute any
+              content without our written permission.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h2 className="text-white text-base font-medium">4. Limitation of liability</h2>
+            <p>
+              Qelvora Technologies provides this website on an &quot;as is&quot; basis. We make no
+              warranty regarding availability, accuracy, or completeness of content on this
+              site.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h2 className="text-white text-base font-medium">5. Governing law</h2>
+            <p>
+              These terms are governed by the laws of India. Any disputes arising from use
+              of this website will be subject to the jurisdiction of courts in Bengaluru,
+              Karnataka.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h2 className="text-white text-base font-medium">6. Contact</h2>
+            <p>
+              For questions about these terms, contact us at{" "}
+              <a href={`mailto:${siteConfig.emails.primary}`} className="text-[#E3C46A] hover:underline">
+                {siteConfig.emails.primary}
+              </a>
+              .
+            </p>
+          </div>
+
+          <div className="mt-10 p-4 rounded-xl border border-amber-500/20 bg-amber-500/5 text-xs text-amber-400">
+            <strong>Note for Qelvora team:</strong> This is a template. Please have it reviewed
+            by a qualified legal professional before making it public on the live website.
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

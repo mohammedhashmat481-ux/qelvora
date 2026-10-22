@@ -1,9 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
-import { Heading } from "@/components/ui/Heading";
-import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 import { servicesData } from "@/data/services";
 import { siteConfig } from "@/data/site";
 import {
@@ -13,19 +10,16 @@ import {
   CloudCog,
   Headset,
   CheckCircle2,
-  ArrowRight,
-  ShieldCheck,
   Phone,
   MessageCircle,
+  ArrowRight,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "IT Services & Custom Software Development | Bengaluru",
+  title: "IT Services — Custom Software, Web, Mobile & Cloud | Qelvora Technologies",
   description:
-    "Tailored custom software development, Next.js web applications, mobile apps, cloud automation, and direct IT consulting from senior engineers in Bengaluru.",
-  alternates: {
-    canonical: `${siteConfig.url}/services`,
-  },
+    "Custom software development, website and web app development, mobile apps, cloud automation, and IT consulting from Bengaluru. Built from scratch, designed for your business.",
+  alternates: { canonical: `${siteConfig.url}/services` },
 };
 
 const iconMap: Record<string, React.ElementType> = {
@@ -39,121 +33,102 @@ const iconMap: Record<string, React.ElementType> = {
 export default function ServicesPage() {
   return (
     <>
-      {/* Services Hero */}
-      <Section variant="shade" spacing="hero" className="border-b border-white/10">
-        <Container size="default">
-          <div className="space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-gold-light text-xs font-medium">
-              <span>Full-Stack Engineering &amp; IT Services</span>
-            </div>
-
-            <div className="space-y-3">
-              <h1 className="text-fluid-display font-light text-white tracking-tight">
-                Software engineered from scratch for your operations
-              </h1>
-              <p className="text-base sm:text-lg text-neutral-300 max-w-[65ch] leading-relaxed">
-                We build new applications, internal workflow tools, client portals, and cloud automations tailored to your exact team hierarchies and compliance needs.
-              </p>
-            </div>
-
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Button href="/contact" variant="primary" size="lg">
-                Discuss your project
-              </Button>
-              <Button
-                href={siteConfig.phones.primary.tel}
-                variant="gold-outline"
-                size="lg"
-                className="gap-2"
-              >
-                <Phone className="w-4 h-4 text-gold-light" />
-                <span>Call {siteConfig.phones.primary.formatted}</span>
-              </Button>
-            </div>
+      {/* Hero */}
+      <section
+        className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 px-4"
+        style={{
+          background:
+            "linear-gradient(135deg, #3A2F14 0%, #1a1a1c 45%, #111113 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(196,154,44,0.08) 0%, transparent 70%)",
+          }}
+        />
+        <div className="max-w-5xl mx-auto space-y-6 relative">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-[#E3C46A] font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C49A2C]" />
+            What we do
           </div>
-        </Container>
-      </Section>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-tight tracking-tight max-w-3xl">
+            Software built for your business,{" "}
+            <span className="text-[#E3C46A]">not a generic template.</span>
+          </h1>
+          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl">
+            We build custom software, websites, mobile apps, and cloud systems
+            from scratch. Everything is made specifically for you — no
+            copy-paste solutions.
+          </p>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-medium transition-colors"
+            >
+              Discuss your project
+            </Link>
+            <a
+              href={siteConfig.phones.primary.tel}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/8 border border-white/12 text-white hover:bg-white/12 text-sm font-medium transition-colors"
+            >
+              <Phone className="w-4 h-4 text-[#E3C46A]" />
+              {siteConfig.phones.primary.formatted}
+            </a>
+          </div>
+        </div>
+      </section>
 
-      {/* Services Deep-Dive Breakdown */}
-      <Section variant="light" spacing="lg">
-        <Container size="default">
-          <div className="space-y-24">
-            {servicesData.map((srv, index) => {
-              const IconComponent = iconMap[srv.icon] || Code2;
-
-              return (
-                <div
-                  key={srv.id}
-                  id={srv.slug}
-                  className="scroll-mt-28 space-y-10 pb-16 border-b border-black/[0.08] last:border-b-0"
-                >
-                  {/* Service Header */}
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    <div className="lg:col-span-8 space-y-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-amber-500/10 text-gold-text-on-light flex items-center justify-center">
-                          <IconComponent className="w-5 h-5" />
-                        </div>
-                        <span className="text-xs font-mono text-gold-text-on-light font-semibold">
-                          0{index + 1}
-                        </span>
-                      </div>
-
-                      <h2 className="text-2xl sm:text-3xl font-light text-qtext">
-                        {srv.title}
-                      </h2>
-                      <p className="text-sm sm:text-base font-medium text-gold-text-on-light">
-                        {srv.tagline}
-                      </p>
-                      <p className="text-sm sm:text-base text-qmuted leading-relaxed max-w-[70ch]">
-                        {srv.detailedDescription}
-                      </p>
-                    </div>
-
-                    <div className="lg:col-span-4 bg-[#F8F7F4] border border-black/[0.07] rounded-panel p-6 space-y-4">
-                      <h3 className="text-xs font-semibold uppercase tracking-wider text-qtext">
-                        Key Capabilities
-                      </h3>
-                      <ul className="space-y-2 text-xs text-qmuted">
-                        {srv.capabilities.map((cap, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-gold-text-on-light shrink-0 mt-0.5" />
-                            <span>{cap}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <div className="pt-3 border-t border-black/[0.06]">
-                        <Button
-                          href="/contact"
-                          variant="outline-dark"
-                          size="sm"
-                          className="w-full text-xs"
-                        >
-                          Inquire about this service
-                        </Button>
-                      </div>
-                    </div>
+      {/* Services list */}
+      <section className="px-4 py-20 sm:py-28">
+        <div className="max-w-5xl mx-auto space-y-20">
+          {servicesData.map((srv, index) => {
+            const Icon = iconMap[srv.icon] || Code2;
+            return (
+              <div
+                key={srv.id}
+                id={srv.slug}
+                className="scroll-mt-28 space-y-8 pb-20 border-b border-white/8 last:border-b-0"
+              >
+                {/* Header */}
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-xl bg-[#C49A2C]/12 flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-[#C49A2C]" strokeWidth={1.5} />
                   </div>
+                  <div className="space-y-2">
+                    <p className="text-xs text-zinc-500 font-mono">
+                      0{index + 1}
+                    </p>
+                    <h2 className="text-2xl sm:text-3xl font-light text-white">
+                      {srv.title}
+                    </h2>
+                    <p className="text-[#E3C46A] text-sm">{srv.tagline}</p>
+                  </div>
+                </div>
 
-                  {/* 4-Step Process for this service */}
-                  <div className="space-y-4">
-                    <h3 className="text-sm font-semibold uppercase tracking-wider text-qmuted">
-                      Delivery Process &amp; Milestones
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Body */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  <div className="lg:col-span-2 space-y-4">
+                    <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                      {srv.detailedDescription}
+                    </p>
+
+                    {/* Process steps */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                       {srv.process.map((step) => (
                         <div
                           key={step.step}
-                          className="p-5 rounded-panel border border-black/[0.08] bg-white space-y-2"
+                          className="p-4 rounded-xl bg-[#18181B] border border-white/8 space-y-1.5"
                         >
-                          <span className="text-xs font-mono text-gold-text-on-light font-bold">
+                          <span className="text-xs text-[#C49A2C] font-mono font-semibold">
                             {step.step}
                           </span>
-                          <h4 className="text-sm font-medium text-qtext">
+                          <h4 className="text-white text-sm font-medium">
                             {step.title}
                           </h4>
-                          <p className="text-xs text-qmuted leading-relaxed">
+                          <p className="text-zinc-500 text-xs leading-relaxed">
                             {step.description}
                           </p>
                         </div>
@@ -161,58 +136,87 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  {/* Deliverables */}
-                  <div className="p-5 rounded-panel bg-[#1B1B1E] text-white border border-white/10 space-y-3">
-                    <p className="text-xs uppercase tracking-wider text-gold-light font-medium">
-                      Guaranteed Deliverables
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-neutral-300">
-                      {srv.deliverables.map((deliv, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-gold-light shrink-0 mt-0.5" />
-                          <span>{deliv}</span>
-                        </div>
-                      ))}
+                  {/* Capabilities sidebar */}
+                  <div className="space-y-5">
+                    <div className="p-5 rounded-xl bg-[#141416] border border-white/8 space-y-3">
+                      <h3 className="text-xs text-zinc-400 font-medium uppercase tracking-wider">
+                        What&apos;s included
+                      </h3>
+                      <ul className="space-y-2">
+                        {srv.capabilities.map((cap, i) => (
+                          <li key={i} className="flex items-start gap-2 text-xs text-zinc-400">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A2C] shrink-0 mt-0.5" />
+                            {cap}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
+                    <Link
+                      href="/contact"
+                      className="flex items-center justify-between w-full px-4 py-3 rounded-xl border border-[#C49A2C]/30 text-[#E3C46A] text-sm hover:bg-[#C49A2C]/8 transition-colors group"
+                    >
+                      <span>Enquire about this</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </Container>
-      </Section>
 
-      {/* Consulting Call to Action */}
-      <Section variant="shade" spacing="lg" className="border-t border-white/10">
-        <Container size="narrow">
-          <div className="text-center space-y-6">
-            <span className="text-xs uppercase tracking-wider text-gold-light font-medium">
-              Start a Conversation
-            </span>
-            <Heading as="h2" size="h1" theme="dark" className="mx-auto">
-              Need a clear technical recommendation before spending?
-            </Heading>
-            <p className="text-sm sm:text-base text-neutral-300 max-w-xl mx-auto leading-relaxed">
-              We do not try to sell you bloated solutions you don&apos;t need. Schedule an architecture review or call us directly to talk through your requirements with an engineer.
-            </p>
+                {/* Deliverables */}
+                <div className="p-5 rounded-xl bg-[#18181B] border border-white/8">
+                  <p className="text-xs text-[#E3C46A] font-medium mb-3 uppercase tracking-wider">
+                    Deliverables
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {srv.deliverables.map((d, i) => (
+                      <div key={i} className="flex items-start gap-2 text-xs text-zinc-400">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                        {d}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
-              <Button href="/contact" variant="primary" size="lg">
-                Schedule an engineering call
-              </Button>
-              <a
-                href={siteConfig.whatsapp.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium transition-colors"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp inquiry</span>
-              </a>
-            </div>
+      {/* CTA */}
+      <section
+        className="px-4 py-20 sm:py-28"
+        style={{
+          background:
+            "linear-gradient(135deg, #3A2F14 0%, #1a1a1c 50%, #111113 100%)",
+        }}
+      >
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-light text-white">
+            Not sure which service you need?
+          </h2>
+          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+            Just call or message us. We will ask a few questions, understand your
+            situation, and tell you honestly what makes sense for your budget and
+            timeline.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-medium transition-colors"
+            >
+              Write to us
+            </Link>
+            <a
+              href={siteConfig.whatsapp.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium transition-colors"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp
+            </a>
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
     </>
   );
 }

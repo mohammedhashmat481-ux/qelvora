@@ -3,86 +3,117 @@
 @tailwind utilities;
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #17171A;
-  --color-black: #121212;
-  --color-charcoal: #1B1B1B;
-  --color-warm-dark: #3A2F14;
-  --color-gold: #C49A2C;
-  --color-gold-light: #E3C46A;
-  --color-gold-text: #7F5F0E;
-  --color-soft-ivory: #F7F4EC;
-  --color-muted: #5A5852;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #121212;
-    --foreground: #F7F4EC;
-  }
+  --bg-base: #111113;
+  --bg-card: #18181B;
+  --bg-card-hover: #1E1E22;
+  --bg-card-deep: #141416;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(196, 154, 44, 0.35);
+  --gold: #C49A2C;
+  --gold-light: #E3C46A;
+  --gold-muted: rgba(196, 154, 44, 0.15);
+  --green: #22c55e;
+  --green-bg: rgba(34, 197, 94, 0.12);
+  --red: #ef4444;
+  --red-bg: rgba(239, 68, 68, 0.12);
+  --text-primary: #FFFFFF;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
 }
 
 html {
   scroll-behavior: smooth;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-poppins), -apple-system, sans-serif;
   overflow-x: hidden;
-  line-height: 1.6;
 }
 
-/* Accessible focus outline */
 *:focus-visible {
   outline: 2px solid #C49A2C;
   outline-offset: 2px;
 }
 
-/* Hairline dividers */
-.hairline-divider {
+/* Status badge utilities */
+.badge-green {
+  @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.badge-red {
+  @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.badge-gold {
+  @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  background: var(--gold-muted);
+  color: var(--gold-light);
+  border: 1px solid var(--border-gold);
+}
+
+/* Clean card style matching mockups */
+.q-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.q-card-deep {
+  background: var(--bg-card-deep);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* Window bar style (like the mockups) */
+.window-bar {
+  background: var(--bg-card-deep);
+  border-bottom: 1px solid var(--border);
+  border-radius: 12px 12px 0 0;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.window-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* Table styling */
+.q-table th {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.q-table td {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.q-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Hairline gold divider */
+.gold-line {
   height: 1px;
-  background: linear-gradient(90deg, rgba(196, 154, 44, 0.25) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(196, 154, 44, 0.25) 100%);
-}
-
-.hairline-divider-light {
-  height: 1px;
-  background: linear-gradient(90deg, rgba(196, 154, 44, 0.25) 0%, rgba(0, 0, 0, 0.08) 50%, rgba(196, 154, 44, 0.25) 100%);
-}
-
-/* Fluid type utility clamp */
-.text-fluid-display {
-  font-size: clamp(2.35rem, 5vw + 0.5rem, 4.1rem);
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-}
-
-.text-fluid-h1 {
-  font-size: clamp(1.9rem, 3.5vw + 0.5rem, 3rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-.text-fluid-h2 {
-  font-size: clamp(1.5rem, 2.5vw + 0.3rem, 2.25rem);
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-}
-
-/* Signature gold gradient on cards and dark sections */
-.bg-signature-shade {
-  background: linear-gradient(100deg, #3A2F14 0%, #121212 50%);
-}
-
-/* Hide scrollbar utility */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  background: linear-gradient(90deg, transparent, rgba(196,154,44,0.4), transparent);
 }

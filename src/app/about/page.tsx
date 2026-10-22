@@ -1,314 +1,275 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
-import { Heading } from "@/components/ui/Heading";
-import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 import { siteConfig } from "@/data/site";
-import { CASE_STUDIES } from "@/data/case-studies";
 import {
   MapPin,
   Phone,
   Mail,
   ArrowUpRight,
-  ShieldCheck,
-  CheckCircle2,
   Code2,
+  ShieldCheck,
   Compass,
   Cpu,
+  MessageCircle,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Qelvora Technologies | Software Studio in Thanisandra, Bengaluru",
+  title: "About Qelvora Technologies | Software Studio in Bengaluru",
   description:
-    "Learn about Qelvora Technologies, an independent software company based in Bengaluru building custom software, CRM systems, and School & College ERP platforms.",
-  alternates: {
-    canonical: `${siteConfig.url}/about`,
-  },
+    "Qelvora Technologies is an independent software company in Thanisandra, Bengaluru. We build custom software, CRM, School ERP, and College ERP for businesses and institutions across India.",
+  alternates: { canonical: `${siteConfig.url}/about` },
 };
 
-export default function AboutPage() {
-  const companyValues = [
-    {
-      title: "Direct developer engagement",
-      description:
-        "We believe clients should speak directly with the engineers designing and writing their software. No middle layers, no distorted requirements, and no misplaced expectations.",
-      icon: Code2,
-    },
-    {
-      title: "Software engineered from scratch",
-      description:
-        "We avoid flimsy template wrappers. Every database schema, business logic constraint, and user interface is built intentionally to mirror the client&apos;s real-world operations.",
-      icon: Cpu,
-    },
-    {
-      title: "Upfront clarity on scope and costs",
-      description:
-        "We do not bait clients with artificially low quotes only to charge for essential requirements later. We document full specifications, milestones, and costs prior to development.",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Support that outlasts the launch",
-      description:
-        "Building software is only step one. We provide on-site staff training, assist with data migration, and offer dependable maintenance SLAs for ongoing stability.",
-      icon: Compass,
-    },
-  ];
+const values = [
+  {
+    icon: Code2,
+    title: "You talk to the developer",
+    body: "No middlemen. No account managers who just relay messages. You work directly with the engineers building your software.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Clear price before we start",
+    body: "We document the full scope, cost, and milestones before writing a single line of code. No hidden extras later.",
+  },
+  {
+    icon: Cpu,
+    title: "Built for Indian workflows",
+    body: "GST invoices, regional language support, local fee structures, WhatsApp notifications — we build for how Indian businesses actually run.",
+  },
+  {
+    icon: Compass,
+    title: "Support after launch",
+    body: "We train your staff, help migrate your data, and stay available after go-live. We don't disappear once the project is delivered.",
+  },
+];
 
+export default function AboutPage() {
   return (
     <>
-      {/* About Hero */}
-      <Section variant="shade" spacing="hero" className="border-b border-white/10">
-        <Container size="default">
-          <div className="space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-gold-light text-xs font-medium">
-              <span>About Qelvora Technologies</span>
-            </div>
+      {/* Hero */}
+      <section
+        className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 px-4"
+        style={{
+          background:
+            "linear-gradient(135deg, #3A2F14 0%, #1a1a1c 45%, #111113 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(196,154,44,0.08) 0%, transparent 70%)",
+          }}
+        />
+        <div className="max-w-5xl mx-auto space-y-6 relative">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-[#E3C46A] font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C49A2C]" />
+            About us
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-tight tracking-tight max-w-3xl">
+            We build software for{" "}
+            <span className="text-[#E3C46A]">
+              schools, businesses, and everyone in between.
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl">
+            Qelvora Technologies is a software company based in Thanisandra,
+            Bengaluru. We build new applications from scratch and provide IT
+            services to clients across India.
+          </p>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-medium transition-colors"
+            >
+              Get in touch
+            </Link>
+            <a
+              href={siteConfig.address.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/8 border border-white/12 text-white hover:bg-white/12 text-sm font-medium transition-colors"
+            >
+              <MapPin className="w-4 h-4 text-[#E3C46A]" />
+              Find our office
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+            </a>
+          </div>
+        </div>
+      </section>
 
-            <div className="space-y-3">
-              <h1 className="text-fluid-display font-light text-white tracking-tight">
-                Innovation today, advancing tomorrow.
-              </h1>
-              <p className="text-base sm:text-lg text-neutral-300 max-w-[65ch] leading-relaxed">
-                We are an Indian software company based in Thanisandra, Bengaluru. We build new software applications and custom projects from scratch for clients, alongside providing dedicated IT services.
+      {/* Who we are */}
+      <section className="px-4 py-20 sm:py-28">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="space-y-5">
+            <h2 className="text-3xl sm:text-4xl font-light text-white leading-tight">
+              A software studio rooted in practical work
+            </h2>
+            <div className="space-y-4 text-zinc-400 leading-relaxed text-sm sm:text-base">
+              <p>
+                Qelvora Technologies was built on a simple idea: schools,
+                colleges, and businesses deserve software that actually fits the
+                way they work — not the other way around.
+              </p>
+              <p>
+                We focus on building custom software from scratch. That means
+                CRM systems, School ERP, College ERP, websites, mobile apps,
+                and business tools — all designed around what you need, not
+                forced into a generic template.
+              </p>
+              <p>
+                We are based in Bengaluru and work with clients across
+                Karnataka and other states in India. Our team works directly
+                with clients — no outsourcing, no relay.
               </p>
             </div>
+          </div>
 
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Button href="/contact" variant="primary" size="lg">
-                Get in touch
-              </Button>
-              <a
-                href={siteConfig.address.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 text-white hover:bg-white/15 text-sm font-medium transition-colors"
+          {/* What we do list */}
+          <div className="space-y-3">
+            <p className="text-xs text-[#E3C46A] font-medium uppercase tracking-widest mb-5">
+              What we build
+            </p>
+            {[
+              "CRM and sales management systems",
+              "School ERP — admissions, fees, attendance, results",
+              "College ERP — departments, marks, placements, alumni",
+              "Custom business software and internal tools",
+              "Websites and web applications",
+              "Mobile apps for Android and iOS",
+              "Cloud setup, automation, and IT consulting",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-3 py-3 border-b border-white/8"
               >
-                <MapPin className="w-4 h-4 text-gold-light" />
-                <span>Locate our Bengaluru office</span>
-                <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
-              </a>
-            </div>
+                <span className="w-1 h-1 rounded-full bg-[#C49A2C] shrink-0" />
+                <span className="text-sm text-zinc-300">{item}</span>
+              </div>
+            ))}
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
 
-      {/* Company Story & Engineering Focus */}
-      <Section variant="light" spacing="lg">
-        <Container size="default">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-7 space-y-6">
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-gold-text-on-light uppercase tracking-wider">
-                  Our Background
-                </p>
-                <Heading as="h2" size="h1" theme="light">
-                  A software studio rooted in practical execution
-                </Heading>
-              </div>
-
-              <div className="space-y-4 text-sm sm:text-base text-qmuted leading-relaxed">
-                <p>
-                  Qelvora Technologies was founded on a straightforward principle: businesses, schools, and colleges deserve software that fits the way they actually work, rather than forcing them to bend their daily operations to fit generic foreign SaaS templates.
-                </p>
-                <p>
-                  Operating from North Bengaluru, we develop full-scale digital systems from scratch. Our core platforms include our proprietary <strong>Qelvora CRM</strong>, <strong>School ERP</strong>, and <strong>College &amp; University ERP</strong>. In addition, we take on custom business software development, client-facing web portals, mobile apps for Android and iOS, and cloud automations.
-                </p>
-                <p>
-                  Our client base spans educational institutions (State Board, CBSE, ICSE schools, and degree colleges), small and medium commercial businesses, early-stage startups, healthcare clinics, and retail and service firms.
-                </p>
-              </div>
-            </div>
-
-            {/* Fact Sheet Box */}
-            <div className="lg:col-span-5 bg-[#FAFAF7] border border-black/[0.08] rounded-panel p-6 sm:p-8 space-y-5">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-qtext">
-                Company Information
-              </h3>
-
-              <div className="space-y-3.5 text-xs sm:text-sm">
-                <div>
-                  <span className="text-qmuted block text-xs">Legal Name</span>
-                  <span className="font-medium text-qtext">Qelvora Technologies</span>
-                </div>
-
-                <div>
-                  <span className="text-qmuted block text-xs">Official Wordmark</span>
-                  <span className="font-mono text-qtext font-medium">QELVORA TECHNOLOGIES</span>
-                </div>
-
-                <div>
-                  <span className="text-qmuted block text-xs">Headquarters</span>
-                  <span className="text-qtext font-medium">
-                    Thanisandra, Bengaluru, Karnataka, India
-                  </span>
-                </div>
-
-                <div>
-                  <span className="text-qmuted block text-xs">Primary Solutions</span>
-                  <span className="text-qtext">
-                    CRM Platforms, School ERP, College ERP, Custom Business Software, Cloud Automation
-                  </span>
-                </div>
-
-                <div>
-                  <span className="text-qmuted block text-xs">Client Sectors</span>
-                  <span className="text-qtext">
-                    Schools, Colleges, SMBs, Startups, Clinics, Retail &amp; Service Companies
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Values & Standards */}
-      <Section variant="charcoal" spacing="lg" hasTopBorder>
-        <Container size="default">
-          <div className="text-left space-y-3 mb-14">
-            <p className="text-xs font-medium text-gold-light uppercase tracking-wider">
-              How We Work
-            </p>
-            <Heading as="h2" size="h1" theme="dark">
-              Our engineering values
-            </Heading>
-            <p className="text-sm sm:text-base text-neutral-400 max-w-[65ch]">
-              We adhere strictly to honesty in technical commitments, clean code, and predictable pricing.
+      {/* Values */}
+      <section className="px-4 py-20 sm:py-28 bg-[#18181B]">
+        <div className="max-w-5xl mx-auto space-y-12">
+          <div className="space-y-3">
+            <h2 className="text-3xl sm:text-4xl font-light text-white">
+              How we work
+            </h2>
+            <p className="text-zinc-400 text-sm sm:text-base max-w-xl">
+              Four things we commit to on every project, large or small.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {companyValues.map((val, i) => {
-              const Icon = val.icon;
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {values.map((v) => {
+              const Icon = v.icon;
               return (
                 <div
-                  key={i}
-                  className="p-6 rounded-panel bg-black/40 border border-white/10 space-y-3"
+                  key={v.title}
+                  className="p-6 rounded-xl border border-white/8 bg-[#141416] space-y-3"
                 >
-                  <div className="w-10 h-10 rounded-full bg-gold/15 text-gold-light flex items-center justify-center">
-                    <Icon className="w-5 h-5" />
+                  <div className="w-9 h-9 rounded-lg bg-[#C49A2C]/12 flex items-center justify-center">
+                    <Icon className="w-4.5 h-4.5 text-[#C49A2C]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-lg font-medium text-white">{val.title}</h3>
-                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
-                    {val.description}
-                  </p>
+                  <h3 className="text-white font-medium text-sm">{v.title}</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{v.body}</p>
                 </div>
               );
             })}
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
 
-      {/* Client Proof Block (Clearly marked placeholder as required) */}
-      <Section variant="light" spacing="md">
-        <Container size="default">
-          <div className="p-6 rounded-panel bg-[#FFFDF5] border border-gold/30 space-y-4">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold-text-on-light">
-              <ShieldCheck className="w-4 h-4" />
-              <span>Client Case Studies &amp; Benchmark Data</span>
-            </div>
-            <p className="text-xs sm:text-sm text-qmuted leading-relaxed">
-              In accordance with our strict transparency policy, we do not fabricate client names, invent metrics, or publish unverified testimonials.
+      {/* Location */}
+      <section
+        className="px-4 py-20 sm:py-28"
+        style={{
+          background:
+            "linear-gradient(135deg, #3A2F14 0%, #1a1a1c 50%, #111113 100%)",
+        }}
+      >
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="space-y-5">
+            <h2 className="text-3xl sm:text-4xl font-light text-white leading-tight">
+              Visit us in Bengaluru
+            </h2>
+            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-md">
+              We are happy to meet in person or over a video call. Talk to us
+              about your project — no commitment needed for the first
+              conversation.
             </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-              {CASE_STUDIES.map((cs) => (
-                <div
-                  key={cs.id}
-                  className="p-4 rounded-lg bg-white border border-black/[0.06] space-y-2 text-xs"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-medium text-qtext">{cs.title}</span>
-                    <span className="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-mono">
-                      {cs.isVerified ? "Verified" : "TODO: Case Study Entry"}
-                    </span>
-                  </div>
-                  <p className="text-qmuted">{cs.solution}</p>
-                  <p className="text-[11px] text-neutral-400 italic font-mono">
-                    {cs.challenge}
-                  </p>
-                </div>
-              ))}
+            <div className="flex flex-wrap gap-4 pt-2">
+              <a
+                href={siteConfig.whatsapp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp us
+              </a>
+              <a
+                href={siteConfig.address.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/8 border border-white/12 text-white hover:bg-white/12 text-sm font-medium transition-colors"
+              >
+                <MapPin className="w-4 h-4 text-[#E3C46A]" />
+                Open in Google Maps
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+              </a>
             </div>
           </div>
-        </Container>
-      </Section>
 
-      {/* Location & Bengaluru Office */}
-      <Section variant="shade" spacing="lg" className="border-t border-white/10">
-        <Container size="default">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7 space-y-5">
-              <span className="text-xs uppercase tracking-wider text-gold-light font-medium">
-                Our Office
-              </span>
-              <Heading as="h2" size="h1" theme="dark">
-                Visit us in Thanisandra, Bengaluru
-              </Heading>
-              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-[60ch]">
-                Whether you prefer an in-person meeting to review campus requirements or an online consultation, our engineers are readily available.
-              </p>
-
-              <div className="pt-2">
-                <a
-                  href={siteConfig.address.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold hover:bg-gold-light text-black text-sm font-medium transition-colors"
-                >
-                  <MapPin className="w-4 h-4" />
-                  <span>Open in Google Maps</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </a>
+          {/* Address card */}
+          <div className="bg-[#18181B] border border-white/10 rounded-2xl p-6 space-y-5">
+            <h3 className="text-white font-medium">Our office</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#E3C46A] shrink-0 mt-0.5" />
+                <span className="text-zinc-300 text-sm leading-relaxed">
+                  {siteConfig.address.full}
+                </span>
               </div>
-            </div>
-
-            <div className="lg:col-span-5 bg-charcoal border border-white/10 rounded-panel p-6 space-y-4 text-xs text-neutral-300">
-              <h3 className="font-semibold text-white text-sm">
-                Registered Address &amp; Contact
-              </h3>
-
-              <div className="space-y-3">
-                <div className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-gold-light shrink-0 mt-0.5" />
-                  <span className="text-neutral-300 leading-relaxed">
-                    {siteConfig.address.full}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-2.5">
-                  <Phone className="w-4 h-4 text-gold-light shrink-0" />
-                  <div className="flex flex-col">
-                    <a
-                      href={siteConfig.phones.primary.tel}
-                      className="text-white hover:text-gold-light font-mono"
-                    >
-                      {siteConfig.phones.primary.formatted}
-                    </a>
-                    <a
-                      href={siteConfig.phones.secondary.tel}
-                      className="text-neutral-400 hover:text-gold-light font-mono"
-                    >
-                      {siteConfig.phones.secondary.formatted}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-gold-light shrink-0" />
+              <div className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-[#E3C46A] shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
                   <a
-                    href={`mailto:${siteConfig.emails.primary}`}
-                    className="text-white hover:text-gold-light"
+                    href={siteConfig.phones.primary.tel}
+                    className="text-white text-sm hover:text-[#E3C46A] font-mono transition-colors"
                   >
-                    {siteConfig.emails.primary}
+                    {siteConfig.phones.primary.formatted}
+                  </a>
+                  <a
+                    href={siteConfig.phones.secondary.tel}
+                    className="text-zinc-400 text-sm hover:text-[#E3C46A] font-mono transition-colors"
+                  >
+                    {siteConfig.phones.secondary.formatted}
                   </a>
                 </div>
               </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-[#E3C46A] shrink-0" />
+                <a
+                  href={`mailto:${siteConfig.emails.primary}`}
+                  className="text-white text-sm hover:text-[#E3C46A] transition-colors"
+                >
+                  {siteConfig.emails.primary}
+                </a>
+              </div>
+            </div>
+            <div className="pt-3 border-t border-white/8">
+              <p className="text-xs text-zinc-500">
+                Mon – Sat &nbsp;·&nbsp; 9:00 AM – 7:00 PM IST
+              </p>
             </div>
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
     </>
   );
 }
