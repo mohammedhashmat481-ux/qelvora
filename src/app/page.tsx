@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { siteConfig } from "@/data/site";
 import {
   Phone, MessageCircle, ArrowRight, CheckCircle2,
@@ -42,27 +41,6 @@ export default function HomePage() {
     <div className="text-white min-h-screen bg-transparent">
       {/* ── HERO ── */}
       <section className="relative pt-32 pb-24 sm:pt-40 sm:pb-32 px-4 overflow-hidden bg-transparent text-white border-b border-white/10">
-        {/* Background gold logo watermark on pure black background */}
-        <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] lg:w-[960px] pointer-events-none select-none opacity-[0.15] z-0 flex items-center justify-center"
-          aria-hidden="true"
-        >
-          <Image
-            src="/logo-emblem.png"
-            alt=""
-            width={358}
-            height={373}
-            priority
-            className="w-full h-auto object-contain"
-          />
-        </div>
-
-        {/* Soft warm-gold ambient glow on black */}
-        <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-[#C49A2C]/15 rounded-full blur-[140px] pointer-events-none z-0"
-          aria-hidden="true"
-        />
-
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="max-w-3xl space-y-7">
             <div

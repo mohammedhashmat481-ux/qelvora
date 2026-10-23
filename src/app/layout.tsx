@@ -162,12 +162,12 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col font-sans bg-black text-white selection:bg-gold/30 selection:text-white relative">
-        {/* Fixed subtle gold QV watermark and ambient glow across all pages */}
+        {/* Single fixed gold QV watermark and ambient glow across all pages */}
         <div
           className="fixed inset-0 pointer-events-none z-0 flex items-center justify-center overflow-hidden"
           aria-hidden="true"
         >
-          <div className="w-[600px] sm:w-[850px] lg:w-[1100px] opacity-[0.06] select-none flex items-center justify-center">
+          <div className="w-[550px] sm:w-[750px] lg:w-[960px] opacity-[0.12] select-none flex items-center justify-center">
             <Image
               src="/logo-emblem.png"
               alt=""
@@ -177,7 +177,7 @@ export default function RootLayout({
               className="w-full h-auto object-contain"
             />
           </div>
-          <div className="absolute top-1/4 w-[800px] h-[500px] bg-[#C49A2C]/[0.08] rounded-full blur-[160px] pointer-events-none" />
+          <div className="absolute w-[700px] h-[500px] bg-[#C49A2C]/10 rounded-full blur-[140px] pointer-events-none" />
         </div>
 
         <SkipLink />
