@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --bg-base: #FFFFFF;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #F8F8FA;
-  --bg-card-deep: #F5F5F7;
-  --border: rgba(0, 0, 0, 0.08);
-  --border-gold: rgba(196, 154, 44, 0.4);
+  --bg-base: #000000;
+  --bg-card: #0E0E11;
+  --bg-card-hover: #141418;
+  --bg-card-deep: #08080A;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(196, 154, 44, 0.35);
   --gold: #C49A2C;
-  --gold-light: #8C6B18;
+  --gold-light: #E3C46A;
   --gold-muted: rgba(196, 154, 44, 0.12);
-  --green: #16a34a;
-  --green-bg: rgba(22, 163, 74, 0.1);
-  --red: #dc2626;
-  --red-bg: rgba(220, 38, 38, 0.1);
-  --text-primary: #111113;
-  --text-secondary: #4B5563;
-  --text-muted: #6B7280;
+  --green: #22c55e;
+  --green-bg: rgba(34, 197, 94, 0.12);
+  --red: #ef4444;
+  --red-bg: rgba(239, 68, 68, 0.12);
+  --text-primary: #FFFFFF;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
 }
 
 html {
@@ -27,8 +27,8 @@ html {
 }
 
 body {
-  background-color: #FFFFFF;
-  color: #111113;
+  background-color: #000000;
+  color: #FFFFFF;
   font-family: var(--font-poppins), -apple-system, sans-serif;
   overflow-x: hidden;
 }
@@ -38,43 +38,39 @@ body {
   outline-offset: 2px;
 }
 
-/* Status badge utilities */
+/* Status badge utilities with 95% transparency */
 .badge-green {
   @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
-  background: var(--green-bg);
+  background: rgba(34, 197, 94, 0.08);
   color: var(--green);
-  border: 1px solid rgba(22, 163, 74, 0.25);
+  border: 1px solid rgba(34, 197, 94, 0.25);
 }
 
 .badge-red {
   @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
-  background: var(--red-bg);
+  background: rgba(239, 68, 68, 0.08);
   color: var(--red);
-  border: 1px solid rgba(220, 38, 38, 0.25);
+  border: 1px solid rgba(239, 68, 68, 0.25);
 }
 
 .badge-gold {
-  @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
-  background: var(--gold-muted);
-  color: #8C6B18;
-  border: 1px solid var(--border-gold);
+  @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+  background: rgba(255, 255, 255, 0.05); /* 95% transparent background */
+  color: #E3C46A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Clean card style */
-.q-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border);
-  border-radius: 12px;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
 }
-
-.q-card-deep {
-  background: #F8F8FA;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+::-webkit-scrollbar-track {
+  background: #000000;
 }
-
-/* Hairline gold divider */
-.gold-line {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(196, 154, 44, 0.35), transparent);
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(196, 154, 44, 0.4);
 }

@@ -39,7 +39,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="bg-white text-zinc-900">
+    <div className="bg-black text-white min-h-screen">
       {/* ── HERO ── */}
       <section className="relative pt-32 pb-24 sm:pt-40 sm:pb-32 px-4 overflow-hidden bg-black text-white border-b border-white/10">
         {/* Background gold logo watermark on pure black background */}
@@ -65,7 +65,10 @@ export default function HomePage() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="max-w-3xl space-y-7">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-[#E3C46A] font-medium">
+            <div
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium"
+              style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+            >
               <span className="w-1.5 h-1.5 rounded-full bg-[#C49A2C] animate-pulse" />
               Bengaluru Software Studio
             </div>
@@ -111,17 +114,17 @@ export default function HomePage() {
       {/* ── PRODUCTS ── */}
       <section
         id="products"
-        className="py-20 px-4 border-t border-zinc-200/80 relative overflow-hidden"
-        style={{
-          backgroundColor: "rgba(196, 154, 44, 0.01)", // 99% transparent matching brand gold
-        }}
+        className="py-20 px-4 border-t border-white/10 relative overflow-hidden bg-black"
       >
         <div className="max-w-6xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#C49A2C]/30 text-xs text-[#8C6B18] font-medium shadow-xs">
+          <div
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium"
+            style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+          >
             Ready-to-Deploy Software
           </div>
-          <h2 className="text-3xl sm:text-4xl font-light text-zinc-950">Our software products &amp; key features</h2>
-          <p className="text-base text-zinc-600 max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl font-light text-white">Our software products &amp; key features</h2>
+          <p className="text-base text-zinc-400 max-w-2xl">
             Everything your team needs to run daily operations smoothly. Here is what is included in each platform.
           </p>
         </div>
@@ -129,27 +132,27 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto space-y-12">
           {/* 1. CRM */}
           <div
-            className="p-6 sm:p-8 rounded-2xl border border-[#C49A2C]/25 shadow-sm space-y-7 hover:border-[#C49A2C]/45 hover:shadow-md transition-all"
+            className="p-6 sm:p-8 rounded-2xl border border-white/10 shadow-2xl space-y-7 transition-all backdrop-blur-md hover:border-[#C49A2C]/40"
             style={{
-              backgroundColor: "rgba(196, 154, 44, 0.01)", // 99% transparent matching gold
+              backgroundColor: "rgba(255, 255, 255, 0.01)", // 99% transparent background
             }}
           >
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-200/60">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/8">
               <div className="space-y-2">
                 <span className="badge-gold">Sales &amp; Client Management</span>
-                <h3 className="text-2xl sm:text-3xl font-medium text-zinc-950">Qelvora CRM</h3>
-                <p className="text-sm text-zinc-600 max-w-2xl leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl font-medium text-white">Qelvora CRM</h3>
+                <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed">
                   Track every lead, send GST-ready quotations, and log WhatsApp follow-ups in one place. No more lost inquiries in personal chat apps.
                 </p>
               </div>
               <Link href="/products/crm" prefetch={true}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors shrink-0 shadow-sm">
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors shrink-0 shadow-lg">
                 Explore CRM details <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
             <div>
-              <p className="text-xs uppercase tracking-wider text-[#8C6B18] font-medium mb-4">
+              <p className="text-xs uppercase tracking-wider text-[#E3C46A] font-medium mb-4">
                 Features included in Qelvora CRM:
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -158,13 +161,14 @@ export default function HomePage() {
                   return (
                     <div
                       key={f.title}
-                      className="p-4 rounded-xl border border-zinc-200/90 space-y-2 bg-white/80 backdrop-blur-xs hover:border-[#C49A2C]/40 hover:shadow-xs transition-all"
+                      className="p-4 rounded-xl border border-white/8 space-y-2 hover:border-[#C49A2C]/30 hover:bg-white/[0.03] transition-all"
+                      style={{ backgroundColor: "rgba(255, 255, 255, 0.02)" }}
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/10 border border-[#C49A2C]/20 flex items-center justify-center text-[#8C6B18]">
+                      <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/15 border border-[#C49A2C]/25 flex items-center justify-center text-[#E3C46A]">
                         <Icon className="w-4 h-4" />
                       </div>
-                      <h4 className="text-sm font-semibold text-zinc-900">{f.title}</h4>
-                      <p className="text-xs text-zinc-600 leading-relaxed">{f.desc}</p>
+                      <h4 className="text-sm font-semibold text-white">{f.title}</h4>
+                      <p className="text-xs text-zinc-400 leading-relaxed">{f.desc}</p>
                     </div>
                   );
                 })}
@@ -174,27 +178,27 @@ export default function HomePage() {
 
           {/* 2. School ERP */}
           <div
-            className="p-6 sm:p-8 rounded-2xl border border-[#C49A2C]/25 shadow-sm space-y-7 hover:border-[#C49A2C]/45 hover:shadow-md transition-all"
+            className="p-6 sm:p-8 rounded-2xl border border-white/10 shadow-2xl space-y-7 transition-all backdrop-blur-md hover:border-[#C49A2C]/40"
             style={{
-              backgroundColor: "rgba(196, 154, 44, 0.01)", // 99% transparent matching gold
+              backgroundColor: "rgba(255, 255, 255, 0.01)", // 99% transparent background
             }}
           >
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-200/60">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/8">
               <div className="space-y-2">
                 <span className="badge-gold">K-12 School Management</span>
-                <h3 className="text-2xl sm:text-3xl font-medium text-zinc-950">Qelvora School ERP</h3>
-                <p className="text-sm text-zinc-600 max-w-2xl leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl font-medium text-white">Qelvora School ERP</h3>
+                <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed">
                   From fee collection to report cards — handle your entire school administration from one screen. Works for CBSE, ICSE, and State Board schools.
                 </p>
               </div>
               <Link href="/products/school-erp" prefetch={true}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors shrink-0 shadow-sm">
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors shrink-0 shadow-lg">
                 Explore School ERP details <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
             <div>
-              <p className="text-xs uppercase tracking-wider text-[#8C6B18] font-medium mb-4">
+              <p className="text-xs uppercase tracking-wider text-[#E3C46A] font-medium mb-4">
                 Features included in Qelvora School ERP:
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -203,13 +207,14 @@ export default function HomePage() {
                   return (
                     <div
                       key={f.title}
-                      className="p-4 rounded-xl border border-zinc-200/90 space-y-2 bg-white/80 backdrop-blur-xs hover:border-[#C49A2C]/40 hover:shadow-xs transition-all"
+                      className="p-4 rounded-xl border border-white/8 space-y-2 hover:border-[#C49A2C]/30 hover:bg-white/[0.03] transition-all"
+                      style={{ backgroundColor: "rgba(255, 255, 255, 0.02)" }}
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/10 border border-[#C49A2C]/20 flex items-center justify-center text-[#8C6B18]">
+                      <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/15 border border-[#C49A2C]/25 flex items-center justify-center text-[#E3C46A]">
                         <Icon className="w-4 h-4" />
                       </div>
-                      <h4 className="text-sm font-semibold text-zinc-900">{f.title}</h4>
-                      <p className="text-xs text-zinc-600 leading-relaxed">{f.desc}</p>
+                      <h4 className="text-sm font-semibold text-white">{f.title}</h4>
+                      <p className="text-xs text-zinc-400 leading-relaxed">{f.desc}</p>
                     </div>
                   );
                 })}
@@ -219,27 +224,27 @@ export default function HomePage() {
 
           {/* 3. College ERP */}
           <div
-            className="p-6 sm:p-8 rounded-2xl border border-[#C49A2C]/25 shadow-sm space-y-7 hover:border-[#C49A2C]/45 hover:shadow-md transition-all"
+            className="p-6 sm:p-8 rounded-2xl border border-white/10 shadow-2xl space-y-7 transition-all backdrop-blur-md hover:border-[#C49A2C]/40"
             style={{
-              backgroundColor: "rgba(196, 154, 44, 0.01)", // 99% transparent matching gold
+              backgroundColor: "rgba(255, 255, 255, 0.01)", // 99% transparent background
             }}
           >
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-200/60">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/8">
               <div className="space-y-2">
                 <span className="badge-gold">Higher Education Management</span>
-                <h3 className="text-2xl sm:text-3xl font-medium text-zinc-950">Qelvora College ERP</h3>
-                <p className="text-sm text-zinc-600 max-w-2xl leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl font-medium text-white">Qelvora College ERP</h3>
+                <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed">
                   Built for degree colleges and autonomous institutions. Handle semester credits, internal marks, government scholarships, and placement drives — all CBCS and NEP ready.
                 </p>
               </div>
               <Link href="/products/college-erp" prefetch={true}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors shrink-0 shadow-sm">
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors shrink-0 shadow-lg">
                 Explore College ERP details <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
             <div>
-              <p className="text-xs uppercase tracking-wider text-[#8C6B18] font-medium mb-4">
+              <p className="text-xs uppercase tracking-wider text-[#E3C46A] font-medium mb-4">
                 Features included in Qelvora College ERP:
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -248,13 +253,14 @@ export default function HomePage() {
                   return (
                     <div
                       key={f.title}
-                      className="p-4 rounded-xl border border-zinc-200/90 space-y-2 bg-white/80 backdrop-blur-xs hover:border-[#C49A2C]/40 hover:shadow-xs transition-all"
+                      className="p-4 rounded-xl border border-white/8 space-y-2 hover:border-[#C49A2C]/30 hover:bg-white/[0.03] transition-all"
+                      style={{ backgroundColor: "rgba(255, 255, 255, 0.02)" }}
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/10 border border-[#C49A2C]/20 flex items-center justify-center text-[#8C6B18]">
+                      <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/15 border border-[#C49A2C]/25 flex items-center justify-center text-[#E3C46A]">
                         <Icon className="w-4 h-4" />
                       </div>
-                      <h4 className="text-sm font-semibold text-zinc-900">{f.title}</h4>
-                      <p className="text-xs text-zinc-600 leading-relaxed">{f.desc}</p>
+                      <h4 className="text-sm font-semibold text-white">{f.title}</h4>
+                      <p className="text-xs text-zinc-400 leading-relaxed">{f.desc}</p>
                     </div>
                   );
                 })}
@@ -265,19 +271,25 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES (hairline rows) ── */}
-      <section className="py-20 px-4 bg-white border-t border-zinc-200">
+      <section className="py-20 px-4 bg-black border-t border-white/10">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <div className="space-y-3">
-              <h2 className="text-3xl sm:text-4xl font-light text-zinc-950">What we build</h2>
-              <p className="text-base text-zinc-600">Any software your business needs, built from scratch for you.</p>
+              <div
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium"
+                style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+              >
+                Custom Development
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-light text-white">What we build</h2>
+              <p className="text-base text-zinc-400">Any software your business needs, built from scratch for you.</p>
             </div>
-            <Link href="/services" prefetch={true} className="text-sm text-[#8C6B18] hover:text-black flex items-center gap-1 shrink-0 font-medium">
+            <Link href="/services" prefetch={true} className="text-sm text-[#E3C46A] hover:text-white flex items-center gap-1 shrink-0 font-medium">
               View all services <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="border-t border-zinc-200">
+          <div className="border-t border-white/10">
             {[
               { num: "01", title: "Custom software development", desc: "Internal tools, billing systems, ERP modules — anything built to match your exact process." },
               { num: "02", title: "Websites and web apps", desc: "Fast Next.js websites, client portals, and web platforms that load in under a second." },
@@ -285,15 +297,15 @@ export default function HomePage() {
               { num: "04", title: "Cloud and automation", desc: "Automate daily WhatsApp alerts, PDF receipts, database backups, and server scaling." },
               { num: "05", title: "IT consulting and support", desc: "Direct guidance from senior developers. Code audits, security fixes, and monthly maintenance." },
             ].map((s) => (
-              <div key={s.num} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-6 border-b border-zinc-200 hover:bg-zinc-50/80 px-2 transition-colors">
+              <div key={s.num} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-6 border-b border-white/10 hover:bg-white/[0.02] px-3 transition-colors">
                 <div className="flex items-start sm:items-center gap-5">
-                  <span className="text-xs font-mono text-[#8C6B18] font-bold">{s.num}</span>
+                  <span className="text-xs font-mono text-[#E3C46A] font-bold">{s.num}</span>
                   <div>
-                    <h3 className="text-base font-medium text-zinc-950">{s.title}</h3>
-                    <p className="text-xs text-zinc-600 mt-0.5">{s.desc}</p>
+                    <h3 className="text-base font-medium text-white">{s.title}</h3>
+                    <p className="text-xs text-zinc-400 mt-0.5">{s.desc}</p>
                   </div>
                 </div>
-                <Link href="/services" prefetch={true} className="text-xs text-[#8C6B18] hover:text-black flex items-center gap-1 shrink-0 self-end sm:self-auto font-medium">
+                <Link href="/services" prefetch={true} className="text-xs text-[#E3C46A] hover:text-white flex items-center gap-1 shrink-0 self-end sm:self-auto font-medium">
                   Learn more <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -303,11 +315,17 @@ export default function HomePage() {
       </section>
 
       {/* ── WHO WE BUILD FOR ── */}
-      <section className="py-20 px-4 bg-[#F8F8FA] border-t border-zinc-200">
+      <section className="py-20 px-4 bg-black border-t border-white/10">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-light text-zinc-950">Who we build for</h2>
-            <p className="text-base text-zinc-600 max-w-xl">
+            <div
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium"
+              style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+            >
+              Industry Solutions
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-light text-white">Who we build for</h2>
+            <p className="text-base text-zinc-400 max-w-xl">
               Software tailored to the unique operational reality of each sector.
             </p>
           </div>
@@ -322,16 +340,20 @@ export default function HomePage() {
             ].map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.label} className="p-5 rounded-xl bg-white border border-zinc-200 shadow-xs space-y-3 flex flex-col justify-between">
+                <div
+                  key={item.label}
+                  className="p-5 rounded-xl border border-white/10 shadow-lg space-y-3 flex flex-col justify-between hover:border-[#C49A2C]/40 transition-all"
+                  style={{ backgroundColor: "rgba(255, 255, 255, 0.01)" }}
+                >
                   <div className="space-y-2">
-                    <div className="w-9 h-9 rounded-lg bg-[#C49A2C]/10 flex items-center justify-center text-[#8C6B18]">
+                    <div className="w-9 h-9 rounded-lg bg-[#C49A2C]/15 flex items-center justify-center text-[#E3C46A]">
                       <Icon className="w-4.5 h-4.5" />
                     </div>
-                    <h3 className="text-sm font-semibold text-zinc-950">{item.label}</h3>
-                    <p className="text-[11px] text-[#8C6B18] font-mono font-medium">{item.sub}</p>
-                    <p className="text-xs text-zinc-600 leading-relaxed">{item.desc}</p>
+                    <h3 className="text-sm font-semibold text-white">{item.label}</h3>
+                    <p className="text-[11px] text-[#E3C46A] font-mono font-medium">{item.sub}</p>
+                    <p className="text-xs text-zinc-400 leading-relaxed">{item.desc}</p>
                   </div>
-                  <Link href="/industries" prefetch={true} className="text-xs text-zinc-500 hover:text-black flex items-center gap-1 pt-1 font-medium">
+                  <Link href="/industries" prefetch={true} className="text-xs text-zinc-400 hover:text-[#E3C46A] flex items-center gap-1 pt-1 font-medium transition-colors">
                     See details <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
@@ -342,11 +364,17 @@ export default function HomePage() {
       </section>
 
       {/* ── HOW WE WORK (4 steps) ── */}
-      <section className="py-20 px-4 bg-white border-t border-zinc-200">
+      <section className="py-20 px-4 bg-black border-t border-white/10">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-light text-zinc-950">How we work</h2>
-            <p className="text-base text-zinc-600 max-w-xl">
+            <div
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium"
+              style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+            >
+              Our Process
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-light text-white">How we work</h2>
+            <p className="text-base text-zinc-400 max-w-xl">
               A transparent, four-step process with no hidden costs and direct engineer access.
             </p>
           </div>
@@ -358,10 +386,14 @@ export default function HomePage() {
               { step: "03", title: "Build", desc: "You review working software every two weeks. We build iteratively so what you see is what you get." },
               { step: "04", title: "Support", desc: "We train your staff, migrate your data, and provide continuous support after launch. We don't vanish." },
             ].map((step) => (
-              <div key={step.step} className="p-6 rounded-xl bg-[#F8F8FA] border border-zinc-200 space-y-3">
-                <span className="text-2xl font-light text-[#8C6B18] font-mono font-semibold">{step.step}</span>
-                <h3 className="text-lg font-medium text-zinc-950">{step.title}</h3>
-                <p className="text-xs text-zinc-600 leading-relaxed">{step.desc}</p>
+              <div
+                key={step.step}
+                className="p-6 rounded-xl border border-white/10 space-y-3 hover:border-[#C49A2C]/40 transition-all"
+                style={{ backgroundColor: "rgba(255, 255, 255, 0.01)" }}
+              >
+                <span className="text-2xl font-light text-[#E3C46A] font-mono font-semibold">{step.step}</span>
+                <h3 className="text-lg font-medium text-white">{step.title}</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -369,11 +401,17 @@ export default function HomePage() {
       </section>
 
       {/* ── WHY QELVORA ── */}
-      <section className="py-20 px-4 bg-[#F8F8FA] border-t border-zinc-200">
+      <section className="py-20 px-4 bg-black border-t border-white/10">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-light text-zinc-950">Why Qelvora</h2>
-            <p className="text-base text-zinc-600">Honest reasons clients choose to work with us.</p>
+            <div
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium"
+              style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+            >
+              Why Choose Us
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-light text-white">Why Qelvora</h2>
+            <p className="text-base text-zinc-400">Honest reasons clients choose to work with us.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -385,12 +423,16 @@ export default function HomePage() {
             ].map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="p-6 rounded-xl bg-white border border-zinc-200 shadow-xs space-y-3">
-                  <div className="w-9 h-9 rounded-lg bg-[#C49A2C]/10 flex items-center justify-center text-[#8C6B18]">
+                <div
+                  key={item.title}
+                  className="p-6 rounded-xl border border-white/10 shadow-lg space-y-3 hover:border-[#C49A2C]/40 transition-all"
+                  style={{ backgroundColor: "rgba(255, 255, 255, 0.01)" }}
+                >
+                  <div className="w-9 h-9 rounded-lg bg-[#C49A2C]/15 flex items-center justify-center text-[#E3C46A]">
                     <Icon className="w-4.5 h-4.5" />
                   </div>
-                  <h3 className="text-sm font-semibold text-zinc-950">{item.title}</h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed">{item.desc}</p>
+                  <h3 className="text-sm font-semibold text-white">{item.title}</h3>
+                  <p className="text-xs text-zinc-400 leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
@@ -399,28 +441,33 @@ export default function HomePage() {
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="py-24 px-4 bg-white border-t border-zinc-200">
+      <section className="py-24 px-4 bg-black border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <span className="badge-gold">Get in touch</span>
-          <h2 className="text-4xl sm:text-5xl font-light text-zinc-950 tracking-tight">
-            Have a project in mind?<br />Let&apos;s build it together.
+          <div
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium mx-auto"
+            style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+          >
+            Get in touch
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight">
+            Have a project in mind?<br /><span className="text-[#E3C46A]">Let&apos;s build it together.</span>
           </h2>
-          <p className="text-base text-zinc-600 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base text-zinc-400 max-w-xl mx-auto leading-relaxed">
             Whether you need a new CRM, School ERP, or custom software built from scratch, our engineers are ready to help.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link href="/contact" prefetch={true}
-              className="px-8 py-3.5 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors min-h-[48px] flex items-center shadow-sm">
+              className="px-8 py-3.5 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors min-h-[48px] flex items-center shadow-lg">
               Write to us
             </Link>
             <a href={siteConfig.whatsapp.url} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold transition-colors min-h-[48px] shadow-sm">
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold transition-colors min-h-[48px] shadow-lg">
               <MessageCircle className="w-4 h-4" />
               WhatsApp us
             </a>
             <a href={siteConfig.phones.primary.tel}
-              className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-zinc-300 text-zinc-800 hover:border-[#C49A2C] hover:text-black text-sm transition-all min-h-[48px] bg-white">
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white hover:border-[#C49A2C] hover:text-[#E3C46A] text-sm transition-all min-h-[48px] bg-white/5">
               <Phone className="w-4 h-4 text-[#C49A2C]" />
               {siteConfig.phones.primary.formatted}
             </a>
