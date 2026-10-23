@@ -37,7 +37,6 @@ export function Header() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Products", href: "/#products" },
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
     { label: "About", href: "/about" },
