@@ -109,9 +109,15 @@ export default function HomePage() {
       </section>
 
       {/* ── PRODUCTS ── */}
-      <section id="products" className="py-20 px-4 bg-[#F8F8FA] border-t border-zinc-200">
+      <section
+        id="products"
+        className="py-20 px-4 border-t border-zinc-200/80 relative overflow-hidden"
+        style={{
+          backgroundColor: "rgba(196, 154, 44, 0.01)", // 99% transparent matching brand gold
+        }}
+      >
         <div className="max-w-6xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-200 text-xs text-[#8C6B18] font-medium shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#C49A2C]/30 text-xs text-[#8C6B18] font-medium shadow-xs">
             Ready-to-Deploy Software
           </div>
           <h2 className="text-3xl sm:text-4xl font-light text-zinc-950">Our software products &amp; key features</h2>
@@ -122,8 +128,13 @@ export default function HomePage() {
 
         <div className="max-w-6xl mx-auto space-y-12">
           {/* 1. CRM */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-zinc-200 shadow-sm space-y-7">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-100">
+          <div
+            className="p-6 sm:p-8 rounded-2xl border border-[#C49A2C]/25 shadow-sm space-y-7 hover:border-[#C49A2C]/45 hover:shadow-md transition-all"
+            style={{
+              backgroundColor: "rgba(196, 154, 44, 0.01)", // 99% transparent matching gold
+            }}
+          >
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-200/60">
               <div className="space-y-2">
                 <span className="badge-gold">Sales &amp; Client Management</span>
                 <h3 className="text-2xl sm:text-3xl font-medium text-zinc-950">Qelvora CRM</h3>
@@ -145,7 +156,10 @@ export default function HomePage() {
                 {crmFeatures.map((f) => {
                   const Icon = f.icon;
                   return (
-                    <div key={f.title} className="p-4 rounded-xl bg-[#F8F8FA] border border-zinc-200/80 space-y-2">
+                    <div
+                      key={f.title}
+                      className="p-4 rounded-xl border border-zinc-200/90 space-y-2 bg-white/80 backdrop-blur-xs hover:border-[#C49A2C]/40 hover:shadow-xs transition-all"
+                    >
                       <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/10 border border-[#C49A2C]/20 flex items-center justify-center text-[#8C6B18]">
                         <Icon className="w-4 h-4" />
                       </div>
@@ -159,8 +173,13 @@ export default function HomePage() {
           </div>
 
           {/* 2. School ERP */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-zinc-200 shadow-sm space-y-7">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-100">
+          <div
+            className="p-6 sm:p-8 rounded-2xl border border-[#C49A2C]/25 shadow-sm space-y-7 hover:border-[#C49A2C]/45 hover:shadow-md transition-all"
+            style={{
+              backgroundColor: "rgba(196, 154, 44, 0.01)", // 99% transparent matching gold
+            }}
+          >
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-200/60">
               <div className="space-y-2">
                 <span className="badge-gold">K-12 School Management</span>
                 <h3 className="text-2xl sm:text-3xl font-medium text-zinc-950">Qelvora School ERP</h3>
@@ -182,7 +201,10 @@ export default function HomePage() {
                 {schoolFeatures.map((f) => {
                   const Icon = f.icon;
                   return (
-                    <div key={f.title} className="p-4 rounded-xl bg-[#F8F8FA] border border-zinc-200/80 space-y-2">
+                    <div
+                      key={f.title}
+                      className="p-4 rounded-xl border border-zinc-200/90 space-y-2 bg-white/80 backdrop-blur-xs hover:border-[#C49A2C]/40 hover:shadow-xs transition-all"
+                    >
                       <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/10 border border-[#C49A2C]/20 flex items-center justify-center text-[#8C6B18]">
                         <Icon className="w-4 h-4" />
                       </div>
@@ -196,8 +218,13 @@ export default function HomePage() {
           </div>
 
           {/* 3. College ERP */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-zinc-200 shadow-sm space-y-7">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-100">
+          <div
+            className="p-6 sm:p-8 rounded-2xl border border-[#C49A2C]/25 shadow-sm space-y-7 hover:border-[#C49A2C]/45 hover:shadow-md transition-all"
+            style={{
+              backgroundColor: "rgba(196, 154, 44, 0.01)", // 99% transparent matching gold
+            }}
+          >
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-200/60">
               <div className="space-y-2">
                 <span className="badge-gold">Higher Education Management</span>
                 <h3 className="text-2xl sm:text-3xl font-medium text-zinc-950">Qelvora College ERP</h3>
@@ -219,7 +246,10 @@ export default function HomePage() {
                 {collegeFeatures.map((f) => {
                   const Icon = f.icon;
                   return (
-                    <div key={f.title} className="p-4 rounded-xl bg-[#F8F8FA] border border-zinc-200/80 space-y-2">
+                    <div
+                      key={f.title}
+                      className="p-4 rounded-xl border border-zinc-200/90 space-y-2 bg-white/80 backdrop-blur-xs hover:border-[#C49A2C]/40 hover:shadow-xs transition-all"
+                    >
                       <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/10 border border-[#C49A2C]/20 flex items-center justify-center text-[#8C6B18]">
                         <Icon className="w-4 h-4" />
                       </div>
