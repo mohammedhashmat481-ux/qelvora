@@ -81,7 +81,7 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link href="/contact"
+              <Link href="/contact" prefetch={true}
                 className="px-8 py-3.5 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors min-h-[48px] flex items-center shadow-lg">
                 Talk to us
               </Link>
@@ -131,7 +131,7 @@ export default function HomePage() {
                   Track every lead, send GST-ready quotations, and log WhatsApp follow-ups in one place. No more lost inquiries in personal chat apps.
                 </p>
               </div>
-              <Link href="/products/crm"
+              <Link href="/products/crm" prefetch={true}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors shrink-0 shadow-sm">
                 Explore CRM details <ArrowRight className="w-4 h-4" />
               </Link>
@@ -168,7 +168,7 @@ export default function HomePage() {
                   From fee collection to report cards — handle your entire school administration from one screen. Works for CBSE, ICSE, and State Board schools.
                 </p>
               </div>
-              <Link href="/products/school-erp"
+              <Link href="/products/school-erp" prefetch={true}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors shrink-0 shadow-sm">
                 Explore School ERP details <ArrowRight className="w-4 h-4" />
               </Link>
@@ -205,7 +205,7 @@ export default function HomePage() {
                   Built for degree colleges and autonomous institutions. Handle semester credits, internal marks, government scholarships, and placement drives — all CBCS and NEP ready.
                 </p>
               </div>
-              <Link href="/products/college-erp"
+              <Link href="/products/college-erp" prefetch={true}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors shrink-0 shadow-sm">
                 Explore College ERP details <ArrowRight className="w-4 h-4" />
               </Link>
@@ -242,7 +242,7 @@ export default function HomePage() {
               <h2 className="text-3xl sm:text-4xl font-light text-zinc-950">What we build</h2>
               <p className="text-base text-zinc-600">Any software your business needs, built from scratch for you.</p>
             </div>
-            <Link href="/services" className="text-sm text-[#8C6B18] hover:text-black flex items-center gap-1 shrink-0 font-medium">
+            <Link href="/services" prefetch={true} className="text-sm text-[#8C6B18] hover:text-black flex items-center gap-1 shrink-0 font-medium">
               View all services <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -263,7 +263,7 @@ export default function HomePage() {
                     <p className="text-xs text-zinc-600 mt-0.5">{s.desc}</p>
                   </div>
                 </div>
-                <Link href="/services" className="text-xs text-[#8C6B18] hover:text-black flex items-center gap-1 shrink-0 self-end sm:self-auto font-medium">
+                <Link href="/services" prefetch={true} className="text-xs text-[#8C6B18] hover:text-black flex items-center gap-1 shrink-0 self-end sm:self-auto font-medium">
                   Learn more <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -301,7 +301,7 @@ export default function HomePage() {
                     <p className="text-[11px] text-[#8C6B18] font-mono font-medium">{item.sub}</p>
                     <p className="text-xs text-zinc-600 leading-relaxed">{item.desc}</p>
                   </div>
-                  <Link href="/industries" className="text-xs text-zinc-500 hover:text-black flex items-center gap-1 pt-1 font-medium">
+                  <Link href="/industries" prefetch={true} className="text-xs text-zinc-500 hover:text-black flex items-center gap-1 pt-1 font-medium">
                     See details <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
@@ -380,7 +380,7 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <Link href="/contact"
+            <Link href="/contact" prefetch={true}
               className="px-8 py-3.5 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors min-h-[48px] flex items-center shadow-sm">
               Write to us
             </Link>

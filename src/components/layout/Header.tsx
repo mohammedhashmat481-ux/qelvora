@@ -54,7 +54,7 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Logo size="md" />
 
-        {/* Desktop nav */}
+        {/* Desktop nav with eager prefetching for instant page transitions */}
         <nav className="hidden md:flex items-center gap-7 text-sm text-zinc-300" aria-label="Main navigation">
           {navLinks.map((n) => {
             const isActive = pathname === n.href;
@@ -62,6 +62,7 @@ export function Header() {
               <Link
                 key={n.label}
                 href={n.href}
+                prefetch={true}
                 className={cn(
                   "transition-colors hover:text-white font-medium",
                   isActive ? "text-[#E3C46A]" : "text-zinc-300"
@@ -85,6 +86,7 @@ export function Header() {
           </a>
           <Link
             href="/contact"
+            prefetch={true}
             className="px-5 py-2 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-xs font-semibold transition-colors shadow-sm"
           >
             Talk to us
@@ -116,6 +118,7 @@ export function Header() {
                 <Link
                   key={n.label}
                   href={n.href}
+                  prefetch={true}
                   className={cn(
                     "text-base font-medium py-1.5 transition-colors",
                     isActive ? "text-[#E3C46A]" : "text-zinc-300 hover:text-white"
@@ -136,6 +139,7 @@ export function Header() {
             </a>
             <Link
               href="/contact"
+              prefetch={true}
               className="text-center py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors"
             >
               Talk to us

@@ -18,6 +18,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
   return (
     <Link
       href="/"
+      prefetch={true}
       className={cn(
         "inline-flex items-center select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49A2C] rounded-md transition-opacity hover:opacity-95",
         className

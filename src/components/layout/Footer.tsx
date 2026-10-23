@@ -51,6 +51,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/products/crm"
+                  prefetch={true}
                   className="hover:text-white transition-colors"
                 >
                   Qelvora CRM
@@ -59,6 +60,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/products/school-erp"
+                  prefetch={true}
                   className="hover:text-white transition-colors"
                 >
                   School ERP
@@ -67,6 +69,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/products/college-erp"
+                  prefetch={true}
                   className="hover:text-white transition-colors"
                 >
                   College ERP
@@ -75,6 +78,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services"
+                  prefetch={true}
                   className="hover:text-white transition-colors"
                 >
                   Custom Software Development
@@ -83,6 +87,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services"
+                  prefetch={true}
                   className="hover:text-white transition-colors"
                 >
                   Websites & Mobile Apps

@@ -1,11 +1,6 @@
 import React from "react";
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Home, ArrowLeft } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "404 — Page Not Found | Qelvora Technologies",
-};
 
 export default function NotFound() {
   return (
@@ -26,6 +21,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
           <Link
             href="/"
+            prefetch={true}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors shadow-sm"
           >
             <Home className="w-4 h-4" />
@@ -33,6 +29,7 @@ export default function NotFound() {
           </Link>
           <Link
             href="/contact"
+            prefetch={true}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-zinc-300 text-zinc-800 hover:bg-zinc-50 text-sm font-medium transition-colors shadow-sm"
           >
             <ArrowLeft className="w-4 h-4" />
