@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, AlertCircle, Loader2, MessageCircle, Phone } from "lucide-react";
+import { CheckCircle2, AlertCircle, Loader2, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/data/site";
 
 interface ContactFormProps {
@@ -33,9 +33,9 @@ const productOptions = [
 ];
 
 const fieldClass =
-  "w-full bg-[#111113] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#C49A2C] transition-colors";
-const labelClass = "block text-xs text-zinc-400 mb-1.5 font-medium";
-const errorClass = "text-xs text-red-400 mt-1";
+  "w-full bg-[#F8F8FA] border border-zinc-200 rounded-lg px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-[#C49A2C] focus:bg-white transition-colors";
+const labelClass = "block text-xs text-zinc-700 mb-1.5 font-medium";
+const errorClass = "text-xs text-red-500 mt-1";
 
 export function ContactForm({
   initialProductInterest = "",
@@ -99,13 +99,13 @@ export function ContactForm({
 
   if (isSuccess) {
     return (
-      <div className="bg-[#18181B] border border-[#C49A2C]/30 rounded-2xl p-8 text-center space-y-5">
-        <div className="w-12 h-12 rounded-full bg-[#C49A2C]/15 mx-auto flex items-center justify-center">
-          <CheckCircle2 className="w-6 h-6 text-[#E3C46A]" />
+      <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center space-y-5">
+        <div className="w-12 h-12 rounded-full bg-emerald-100 mx-auto flex items-center justify-center">
+          <CheckCircle2 className="w-6 h-6 text-emerald-700" />
         </div>
         <div className="space-y-2">
-          <h3 className="text-xl font-medium text-white">Message received!</h3>
-          <p className="text-sm text-zinc-400 max-w-md mx-auto leading-relaxed">
+          <h3 className="text-xl font-semibold text-zinc-900">Message received!</h3>
+          <p className="text-sm text-zinc-600 max-w-md mx-auto leading-relaxed">
             Thank you, {formData.name}. We will get back to you within one business day.
             You can also reach us right now on WhatsApp.
           </p>
@@ -115,7 +115,7 @@ export function ContactForm({
             href={siteConfig.whatsapp.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium transition-colors shadow-xs"
           >
             <MessageCircle className="w-4 h-4" />
             Chat on WhatsApp
@@ -126,7 +126,7 @@ export function ContactForm({
               setIsSuccess(false);
               setFormData({ name: "", phone: "", email: "", organisationType: "School / K-12 Institution", productInterest: "", message: "", websiteHp: "" });
             }}
-            className="px-5 py-2.5 rounded-full bg-white/8 text-white text-sm hover:bg-white/12 transition-colors"
+            className="px-5 py-2.5 rounded-full bg-white border border-zinc-200 text-zinc-700 text-sm hover:bg-zinc-50 transition-colors shadow-xs"
           >
             Send another message
           </button>
@@ -138,19 +138,19 @@ export function ContactForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-[#18181B] border border-white/10 rounded-2xl p-6 sm:p-8 space-y-5"
+      className="bg-white border border-zinc-200 rounded-2xl p-6 sm:p-8 space-y-5 shadow-sm"
       noValidate
     >
-      <div className="border-b border-white/8 pb-4">
-        <h3 className="text-lg font-medium text-white">{formTitle}</h3>
+      <div className="border-b border-zinc-100 pb-4">
+        <h3 className="text-lg font-semibold text-zinc-950">{formTitle}</h3>
         <p className="text-xs text-zinc-500 mt-1">
           We reply within one business day. Your details are never shared.
         </p>
       </div>
 
       {generalError && (
-        <div role="alert" className="p-3.5 rounded-lg bg-red-950/60 border border-red-500/30 text-red-300 text-xs flex items-start gap-2.5">
-          <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+        <div role="alert" className="p-3.5 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs flex items-start gap-2.5">
+          <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
           {generalError}
         </div>
       )}
@@ -171,7 +171,7 @@ export function ContactForm({
           <label htmlFor="phone" className={labelClass}>Phone number *</label>
           <input id="phone" name="phone" type="tel" placeholder="+91 98450 12345" required value={formData.phone} onChange={handleChange} className={fieldClass} aria-describedby={fieldErrors.phone ? "phone-err" : undefined} />
           {fieldErrors.phone && <p id="phone-err" className={errorClass}>{fieldErrors.phone}</p>}
-          <p className="text-xs text-zinc-600 mt-1">We&apos;ll call or WhatsApp this number</p>
+          <p className="text-xs text-zinc-400 mt-1">We&apos;ll call or WhatsApp this number</p>
         </div>
       </div>
 
@@ -206,7 +206,7 @@ export function ContactForm({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-medium transition-colors disabled:opacity-60 disabled:cursor-not-allowed min-w-[140px]"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed min-w-[140px] shadow-sm"
         >
           {isSubmitting ? (
             <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</>
@@ -216,7 +216,7 @@ export function ContactForm({
         </button>
         <p className="text-xs text-zinc-500 text-center sm:text-right">
           Or call us:{" "}
-          <a href={siteConfig.phones.primary.tel} className="text-[#E3C46A] hover:underline font-mono">
+          <a href={siteConfig.phones.primary.tel} className="text-[#8C6B18] font-medium hover:underline font-mono">
             {siteConfig.phones.primary.formatted}
           </a>
         </p>

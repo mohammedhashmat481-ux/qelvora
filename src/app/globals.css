@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --bg-base: #111113;
-  --bg-card: #18181B;
-  --bg-card-hover: #1E1E22;
-  --bg-card-deep: #141416;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-gold: rgba(196, 154, 44, 0.35);
+  --bg-base: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8F8FA;
+  --bg-card-deep: #F5F5F7;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-gold: rgba(196, 154, 44, 0.4);
   --gold: #C49A2C;
-  --gold-light: #E3C46A;
-  --gold-muted: rgba(196, 154, 44, 0.15);
-  --green: #22c55e;
-  --green-bg: rgba(34, 197, 94, 0.12);
-  --red: #ef4444;
-  --red-bg: rgba(239, 68, 68, 0.12);
-  --text-primary: #FFFFFF;
-  --text-secondary: #A1A1AA;
-  --text-muted: #71717A;
+  --gold-light: #8C6B18;
+  --gold-muted: rgba(196, 154, 44, 0.12);
+  --green: #16a34a;
+  --green-bg: rgba(22, 163, 74, 0.1);
+  --red: #dc2626;
+  --red-bg: rgba(220, 38, 38, 0.1);
+  --text-primary: #111113;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
 }
 
 html {
@@ -27,8 +27,8 @@ html {
 }
 
 body {
-  background-color: var(--bg-base);
-  color: var(--text-primary);
+  background-color: #FFFFFF;
+  color: #111113;
   font-family: var(--font-poppins), -apple-system, sans-serif;
   overflow-x: hidden;
 }
@@ -43,77 +43,38 @@ body {
   @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
   background: var(--green-bg);
   color: var(--green);
-  border: 1px solid rgba(34, 197, 94, 0.25);
+  border: 1px solid rgba(22, 163, 74, 0.25);
 }
 
 .badge-red {
   @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
   background: var(--red-bg);
   color: var(--red);
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  border: 1px solid rgba(220, 38, 38, 0.25);
 }
 
 .badge-gold {
   @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
   background: var(--gold-muted);
-  color: var(--gold-light);
+  color: #8C6B18;
   border: 1px solid var(--border-gold);
 }
 
-/* Clean card style matching mockups */
+/* Clean card style */
 .q-card {
-  background: var(--bg-card);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 12px;
 }
 
 .q-card-deep {
-  background: var(--bg-card-deep);
+  background: #F8F8FA;
   border: 1px solid var(--border);
   border-radius: 8px;
-}
-
-/* Window bar style (like the mockups) */
-.window-bar {
-  background: var(--bg-card-deep);
-  border-bottom: 1px solid var(--border);
-  border-radius: 12px 12px 0 0;
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.window-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-/* Table styling */
-.q-table th {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--border);
-}
-
-.q-table td {
-  padding: 10px 12px;
-  font-size: 13px;
-  color: var(--text-secondary);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-
-.q-table tr:last-child td {
-  border-bottom: none;
 }
 
 /* Hairline gold divider */
 .gold-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(196,154,44,0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(196, 154, 44, 0.35), transparent);
 }
