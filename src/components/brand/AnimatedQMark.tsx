@@ -50,7 +50,7 @@ export function AnimatedQMark({
         className="absolute inset-0 pointer-events-none rounded-full blur-3xl opacity-25"
         style={{
           background:
-            "radial-gradient(circle, rgba(196,154,44,0.3) 0%, rgba(58,47,20,0.1) 60%, transparent 80%)",
+            "radial-gradient(circle, rgba(212,175,90,0.3) 0%, rgba(58,47,20,0.1) 60%, transparent 80%)",
         }}
         aria-hidden="true"
       />
@@ -69,7 +69,7 @@ export function AnimatedQMark({
           cy="364"
           rx="122"
           ry="106"
-          stroke="#C49A2C"
+          stroke="#D4AF5A"
           strokeWidth="11"
           fill="none"
           initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}
@@ -84,7 +84,7 @@ export function AnimatedQMark({
           rx="106"
           ry="98"
           transform="rotate(-12 343 356)"
-          stroke="#C49A2C"
+          stroke="#D4AF5A"
           strokeWidth="11"
           fill="none"
           initial={{ pathLength: shouldReduceMotion ? 1 : 0, opacity: 0 }}

@@ -30,39 +30,28 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 const accentColors: Record<string, string> = {
-  schools: "#60A5FA",
-  colleges: "#A78BFA",
-  "smb-startups": "#E3C46A",
-  clinics: "#34D399",
-  "retail-services": "#FBBF24",
+  schools: "#D4AF5A",
+  colleges: "#D4AF5A",
+  "smb-startups": "#D4AF5A",
+  clinics: "#328568",
+  "retail-services": "#E8C76A",
 };
 
 export default function IndustriesPage() {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-[#080808] text-[#F8F6F0] min-h-screen">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 px-4 bg-black border-b border-white/10">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          aria-hidden="true"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(196,154,44,0.12) 0%, transparent 70%)",
-          }}
-        />
+      <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 px-4 bg-[#080808] border-b border-[#303030]">
         <div className="max-w-5xl mx-auto space-y-6 relative">
-          <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium"
-            style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C49A2C]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121212] border border-[#303030] text-xs text-[#D4AF5A] font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF5A]" />
             Who we work with
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-tight tracking-tight max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#F8F6F0] leading-tight tracking-tight max-w-3xl">
             Software built for{" "}
-            <span className="text-[#E3C46A]">your type of business.</span>
+            <span className="text-[#D4AF5A]">your type of business.</span>
           </h1>
-          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl">
+          <p className="text-base sm:text-lg text-[#B8B8B8] leading-relaxed max-w-2xl">
             We work with schools, colleges, small businesses, clinics, and
             retail shops across India. Each industry has its own way of working
             — and we build software that fits exactly that.
@@ -71,13 +60,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* Quick nav pills */}
-      <section className="px-4 py-4 bg-black/95 backdrop-blur border-b border-white/10 sticky top-16 z-10">
+      <section className="px-4 py-4 bg-[#080808]/95 backdrop-blur border-b border-[#303030] sticky top-16 z-10">
         <div className="max-w-5xl mx-auto flex flex-wrap gap-2">
           {industriesData.map((ind) => (
             <a
               key={ind.id}
               href={`#${ind.slug}`}
-              className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs font-medium hover:border-[#C49A2C] hover:text-[#E3C46A] hover:bg-white/10 transition-colors"
+              className="px-4 py-1.5 rounded-full border border-[#303030] bg-[#121212] text-[#B8B8B8] text-xs font-medium hover:border-[#D4AF5A] hover:text-[#D4AF5A] transition-colors duration-200"
             >
               {ind.title.split(" ")[0]}
             </a>
@@ -86,35 +75,34 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industries */}
-      <section className="px-4 py-20 sm:py-28 bg-black">
+      <section className="px-4 py-20 sm:py-28 bg-[#121212]">
         <div className="max-w-5xl mx-auto space-y-24">
           {industriesData.map((ind) => {
             const Icon = iconMap[ind.id] || Briefcase;
-            const accent = accentColors[ind.id] || "#E3C46A";
+            const accent = accentColors[ind.id] || "#D4AF5A";
 
             return (
               <div
                 key={ind.id}
                 id={ind.slug}
-                className="scroll-mt-28 space-y-8 pb-20 border-b border-white/10 last:border-b-0"
+                className="scroll-mt-28 space-y-8 pb-20 border-b border-[#303030] last:border-b-0"
               >
                 {/* Header */}
                 <div className="flex items-start gap-4">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border"
                     style={{
-                      background: `${accent}15`,
-                      borderColor: `${accent}35`,
+                      background: "#1A1A1A",
+                      borderColor: "#303030",
                     }}
                   >
                     <Icon
-                      className="w-6 h-6"
-                      style={{ color: accent }}
+                      className="w-6 h-6 text-[#D4AF5A]"
                       strokeWidth={1.75}
                     />
                   </div>
                   <div className="space-y-1">
-                    <h2 className="text-2xl sm:text-3xl font-light text-white">
+                    <h2 className="text-2xl sm:text-3xl font-light text-[#F8F6F0]">
                       {ind.title}
                     </h2>
                     <p className="text-sm font-medium" style={{ color: accent }}>
@@ -123,7 +111,7 @@ export default function IndustriesPage() {
                   </div>
                 </div>
 
-                <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-3xl">
+                <p className="text-[#B8B8B8] text-sm sm:text-base leading-relaxed max-w-3xl">
                   {ind.description}
                 </p>
 
@@ -131,16 +119,15 @@ export default function IndustriesPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                   {/* Problems */}
                   <div
-                    className="p-6 rounded-2xl border border-red-500/25 space-y-3.5 shadow-sm"
-                    style={{ backgroundColor: "rgba(239, 68, 68, 0.02)" }}
+                    className="p-6 rounded-2xl bg-[#1A1A1A] border border-[#D9534F]/30 space-y-3.5 shadow-sm"
                   >
-                    <h3 className="text-xs text-red-400 font-bold uppercase tracking-wider">
+                    <h3 className="text-xs text-[#D9534F] font-bold uppercase tracking-wider">
                       Common problems
                     </h3>
                     <ul className="space-y-2.5">
                       {ind.painPoints.map((p, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-sm text-zinc-300 leading-relaxed font-normal">
-                          <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0 mt-2" />
+                        <li key={i} className="flex items-start gap-2.5 text-sm text-[#F8F6F0] leading-relaxed font-normal">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#D9534F] shrink-0 mt-2" />
                           {p}
                         </li>
                       ))}
@@ -149,18 +136,16 @@ export default function IndustriesPage() {
 
                   {/* Solutions */}
                   <div
-                    className="p-6 rounded-2xl border border-white/10 space-y-3.5 shadow-sm backdrop-blur-md"
-                    style={{ backgroundColor: "rgba(255, 255, 255, 0.01)" }}
+                    className="p-6 rounded-2xl bg-[#1A1A1A] border border-[#303030] hover:border-[#D4AF5A]/60 space-y-3.5 shadow-sm transition-all duration-200"
                   >
-                    <h3 className="text-xs text-zinc-400 font-bold uppercase tracking-wider">
+                    <h3 className="text-xs text-[#858585] font-bold uppercase tracking-wider">
                       How we solve it
                     </h3>
                     <ul className="space-y-2.5">
                       {ind.solutions.map((s, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-sm text-zinc-300 leading-relaxed font-normal">
+                        <li key={i} className="flex items-start gap-2.5 text-sm text-[#F8F6F0] leading-relaxed font-normal">
                           <CheckCircle2
-                            className="w-4 h-4 shrink-0 mt-0.5"
-                            style={{ color: accent }}
+                            className="w-4 h-4 shrink-0 mt-0.5 text-[#328568]"
                           />
                           {s}
                         </li>
@@ -174,12 +159,7 @@ export default function IndustriesPage() {
                   {ind.exampleDeliverables.map((d, i) => (
                     <span
                       key={i}
-                      className="px-3.5 py-1.5 rounded-full border text-xs font-medium"
-                      style={{
-                        borderColor: `${accent}35`,
-                        color: accent,
-                        background: `${accent}10`,
-                      }}
+                      className="px-3.5 py-1.5 rounded-full border border-[#303030] bg-[#1A1A1A] text-xs font-medium text-[#F8F6F0]"
                     >
                       {d}
                     </span>
@@ -190,8 +170,7 @@ export default function IndustriesPage() {
                   <Link
                     href="/contact"
                     prefetch={true}
-                    className="inline-flex items-center gap-2 text-sm font-semibold group hover:underline"
-                    style={{ color: accent }}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4AF5A] hover:text-[#E8C76A] group transition-colors duration-200"
                   >
                     Talk to us about {ind.title.split(" ")[0].toLowerCase()} software
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -204,18 +183,15 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 py-20 sm:py-28 bg-black border-t border-white/10">
+      <section className="px-4 py-20 sm:py-28 bg-[#080808] border-t border-[#303030]">
         <div className="max-w-3xl mx-auto text-center space-y-6">
-          <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium mx-auto"
-            style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-          >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121212] border border-[#303030] text-xs text-[#D4AF5A] font-medium mx-auto">
             Custom Solutions
           </div>
-          <h2 className="text-3xl sm:text-4xl font-light text-white">
+          <h2 className="text-3xl sm:text-4xl font-light text-[#F8F6F0]">
             Don&apos;t see your industry?
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#B8B8B8] text-sm sm:text-base leading-relaxed">
             We have worked with a wide range of businesses. If you have a
             software problem, tell us about it and we will tell you honestly
             whether we can help.
@@ -224,7 +200,7 @@ export default function IndustriesPage() {
             <Link
               href="/contact"
               prefetch={true}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#D4AF5A] hover:bg-[#E8C76A] text-[#080808] text-sm font-semibold transition-colors duration-200 shadow-md"
             >
               Contact us
             </Link>
@@ -232,7 +208,7 @@ export default function IndustriesPage() {
               href={siteConfig.whatsapp.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#328568] hover:bg-[#286f56] text-white text-sm font-semibold transition-colors duration-200 shadow-md"
             >
               <MessageCircle className="w-4 h-4" />
               WhatsApp

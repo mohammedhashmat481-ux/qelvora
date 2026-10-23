@@ -8,13 +8,13 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black border-t border-white/10 text-zinc-400 py-16 px-4">
+    <footer className="bg-[#080808] border-t border-[#303030] text-[#B8B8B8] py-16 px-4">
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand col */}
           <div className="md:col-span-2 space-y-4">
             <Logo size="lg" />
-            <p className="text-xs text-zinc-400 max-w-sm leading-relaxed">
+            <p className="text-xs text-[#A8A8A8] max-w-sm leading-relaxed">
               Software company based in Thanisandra, Bengaluru. We build custom
               software, CRM, School ERP, and College ERP for institutions and
               businesses across India.
@@ -24,18 +24,18 @@ export function Footer() {
                 href={siteConfig.whatsapp.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs hover:bg-emerald-900/50 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#121212] border border-[#303030] text-[#B8B8B8] hover:text-[#D4AF5A] hover:border-[#D4AF5A] text-xs transition-colors duration-200"
               >
-                <MessageCircle className="w-3.5 h-3.5" />
+                <MessageCircle className="w-3.5 h-3.5 text-[#B8B8B8] group-hover:text-[#D4AF5A]" />
                 WhatsApp
               </a>
               <a
                 href={siteConfig.address.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-zinc-300 hover:text-white transition-colors"
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#121212] border border-[#303030] text-xs text-[#B8B8B8] hover:text-[#D4AF5A] hover:border-[#D4AF5A] transition-colors duration-200"
               >
-                <MapPin className="w-3 h-3 text-[#E3C46A]" />
+                <MapPin className="w-3 h-3 text-[#D4AF5A]" />
                 Directions
                 <ArrowUpRight className="w-2.5 h-2.5 opacity-60" />
               </a>
@@ -44,7 +44,7 @@ export function Footer() {
 
           {/* Products & Services */}
           <div className="space-y-3">
-            <p className="text-xs font-semibold text-white uppercase tracking-wider">
+            <p className="text-xs font-semibold text-[#F8F6F0] uppercase tracking-wider">
               Products
             </p>
             <ul className="space-y-2 text-xs">
@@ -52,7 +52,7 @@ export function Footer() {
                 <Link
                   href="/products/crm"
                   prefetch={true}
-                  className="hover:text-white transition-colors"
+                  className="text-[#B8B8B8] hover:text-[#D4AF5A] transition-colors duration-200"
                 >
                   Qelvora CRM
                 </Link>
@@ -61,7 +61,7 @@ export function Footer() {
                 <Link
                   href="/products/school-erp"
                   prefetch={true}
-                  className="hover:text-white transition-colors"
+                  className="text-[#B8B8B8] hover:text-[#D4AF5A] transition-colors duration-200"
                 >
                   School ERP
                 </Link>
@@ -70,7 +70,7 @@ export function Footer() {
                 <Link
                   href="/products/college-erp"
                   prefetch={true}
-                  className="hover:text-white transition-colors"
+                  className="text-[#B8B8B8] hover:text-[#D4AF5A] transition-colors duration-200"
                 >
                   College ERP
                 </Link>
@@ -79,7 +79,7 @@ export function Footer() {
                 <Link
                   href="/services"
                   prefetch={true}
-                  className="hover:text-white transition-colors"
+                  className="text-[#B8B8B8] hover:text-[#D4AF5A] transition-colors duration-200"
                 >
                   Custom Software Development
                 </Link>
@@ -88,7 +88,7 @@ export function Footer() {
                 <Link
                   href="/services"
                   prefetch={true}
-                  className="hover:text-white transition-colors"
+                  className="text-[#B8B8B8] hover:text-[#D4AF5A] transition-colors duration-200"
                 >
                   Websites & Mobile Apps
                 </Link>
@@ -98,17 +98,17 @@ export function Footer() {
 
           {/* Contact col */}
           <div className="space-y-3">
-            <p className="text-xs font-semibold text-white uppercase tracking-wider">
+            <p className="text-xs font-semibold text-[#F8F6F0] uppercase tracking-wider">
               Contact
             </p>
             <div className="space-y-2 text-xs">
-              <p className="leading-relaxed text-zinc-400">
+              <p className="leading-relaxed text-[#A8A8A8]">
                 {siteConfig.address.full}
               </p>
               <p>
                 <a
                   href={siteConfig.phones.primary.tel}
-                  className="text-white hover:text-[#E3C46A] font-mono transition-colors"
+                  className="text-[#F8F6F0] hover:text-[#D4AF5A] font-mono transition-colors duration-200"
                 >
                   {siteConfig.phones.primary.formatted}
                 </a>
@@ -116,12 +116,12 @@ export function Footer() {
               <p>
                 <a
                   href={`mailto:${siteConfig.emails.primary}`}
-                  className="text-white hover:text-[#E3C46A] transition-colors"
+                  className="text-[#F8F6F0] hover:text-[#D4AF5A] transition-colors duration-200"
                 >
                   {siteConfig.emails.primary}
                 </a>
               </p>
-              <p className="text-zinc-500 pt-1">
+              <p className="text-[#858585] pt-1">
                 Mon – Sat, 9:00 AM – 7:00 PM IST
               </p>
             </div>
@@ -129,20 +129,22 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div className="pt-8 border-t border-[#303030] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#858585]">
           <p>
             © {currentYear} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
-              className="hover:text-zinc-400 transition-colors"
+              prefetch={true}
+              className="text-[#858585] hover:text-[#D4AF5A] transition-colors duration-200"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="hover:text-zinc-400 transition-colors"
+              prefetch={true}
+              className="text-[#858585] hover:text-[#D4AF5A] transition-colors duration-200"
             >
               Terms of Service
             </Link>

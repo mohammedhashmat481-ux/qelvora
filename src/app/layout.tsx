@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
-import Image from "next/image";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -161,28 +160,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col font-sans bg-black text-white selection:bg-gold/30 selection:text-white relative">
-        {/* Single fixed gold QV watermark and ambient glow across all pages */}
-        <div
-          className="fixed inset-0 pointer-events-none z-0 flex items-center justify-center overflow-hidden"
-          aria-hidden="true"
-        >
-          <div className="w-[550px] sm:w-[750px] lg:w-[960px] opacity-[0.12] select-none flex items-center justify-center">
-            <Image
-              src="/logo-emblem.png"
-              alt=""
-              width={358}
-              height={373}
-              priority
-              className="w-full h-auto object-contain"
-            />
-          </div>
-          <div className="absolute w-[700px] h-[500px] bg-[#C49A2C]/10 rounded-full blur-[140px] pointer-events-none" />
-        </div>
-
+      <body className="min-h-screen flex flex-col font-sans bg-[#080808] text-[#F8F6F0] selection:bg-[#D4AF5A]/30 selection:text-white relative">
         <SkipLink />
         <Header />
-        <main id="main-content" className="flex-1 focus:outline-none relative z-10 bg-transparent">
+        <main id="main-content" className="flex-1 focus:outline-none">
           {children}
         </main>
         <Footer />

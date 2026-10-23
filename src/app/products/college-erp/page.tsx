@@ -26,12 +26,12 @@ export const metadata: Metadata = {
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   return (
-    <details className="group border-b border-white/8 last:border-0 py-4.5">
-      <summary className="flex items-center justify-between text-base text-white hover:text-[#E3C46A] cursor-pointer list-none font-medium transition-colors gap-4">
+    <details className="group border-b border-[#303030] last:border-0 py-4.5">
+      <summary className="flex items-center justify-between text-base text-[#F8F6F0] hover:text-[#D4AF5A] cursor-pointer list-none font-medium transition-colors duration-200 gap-4">
         <span>{q}</span>
-        <ChevronDown className="w-4.5 h-4.5 shrink-0 text-zinc-400 group-open:rotate-180 group-open:text-[#E3C46A] transition-transform duration-200" />
+        <ChevronDown className="w-4.5 h-4.5 shrink-0 text-[#858585] group-open:rotate-180 group-open:text-[#D4AF5A] transition-transform duration-200" />
       </summary>
-      <p className="pt-3 text-sm text-zinc-400 leading-relaxed font-normal">{a}</p>
+      <p className="pt-3 text-sm text-[#B8B8B8] leading-relaxed font-normal">{a}</p>
     </details>
   );
 }
@@ -47,34 +47,23 @@ export default function CollegeErpPage() {
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-[#080808] text-[#F8F6F0] min-h-screen">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-24 px-4 bg-black border-b border-white/10">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          aria-hidden="true"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(196,154,44,0.12) 0%, transparent 70%)",
-          }}
-        />
+      <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-24 px-4 bg-[#080808] border-b border-[#303030]">
         <div className="max-w-4xl mx-auto relative space-y-6 text-center">
-          <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium mx-auto"
-            style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C49A2C]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121212] border border-[#303030] text-xs text-[#D4AF5A] font-medium mx-auto">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF5A]" />
             {college.badge}
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-tight tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#F8F6F0] leading-tight tracking-tight">
             {college.name}
           </h1>
-          <p className="text-lg sm:text-xl text-[#E3C46A] font-medium max-w-2xl mx-auto">{college.tagline}</p>
-          <p className="text-base text-zinc-400 leading-relaxed max-w-2xl mx-auto">{college.summary}</p>
+          <p className="text-lg sm:text-xl text-[#D4AF5A] font-medium max-w-2xl mx-auto">{college.tagline}</p>
+          <p className="text-base text-[#B8B8B8] leading-relaxed max-w-2xl mx-auto">{college.summary}</p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <a
               href="#request-demo"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#D4AF5A] hover:bg-[#E8C76A] text-[#080808] text-sm font-semibold transition-colors duration-200 shadow-md"
             >
               Request a demo
             </a>
@@ -82,7 +71,7 @@ export default function CollegeErpPage() {
               href={siteConfig.whatsapp.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#328568] hover:bg-[#286f56] text-white text-sm font-semibold transition-colors duration-200 shadow-md"
             >
               <MessageCircle className="w-4 h-4" />
               WhatsApp us
@@ -92,16 +81,13 @@ export default function CollegeErpPage() {
       </section>
 
       {/* Features grid */}
-      <section className="px-4 py-16 sm:py-20 bg-black border-b border-white/10">
+      <section className="px-4 py-16 sm:py-20 bg-[#121212] border-b border-[#303030]">
         <div className="max-w-5xl mx-auto space-y-8">
           <div className="space-y-2">
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium"
-              style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-            >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#303030] text-xs text-[#D4AF5A] font-medium">
               Core Capabilities
             </div>
-            <h2 className="text-2xl sm:text-3xl font-light text-white">Features included in Qelvora College ERP</h2>
+            <h2 className="text-2xl sm:text-3xl font-light text-[#F8F6F0]">Features included in Qelvora College ERP</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {collegeFeatures.map((f) => {
@@ -109,14 +95,13 @@ export default function CollegeErpPage() {
               return (
                 <div
                   key={f.title}
-                  className="p-6 rounded-2xl border border-white/10 shadow-lg space-y-3 hover:border-[#C49A2C]/40 transition-all backdrop-blur-md"
-                  style={{ backgroundColor: "rgba(255, 255, 255, 0.01)" }}
+                  className="p-6 rounded-2xl bg-[#1A1A1A] border border-[#303030] hover:border-[#D4AF5A]/60 hover:bg-[#161616] space-y-3 transition-all duration-200 shadow-sm"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#C49A2C]/15 border border-[#C49A2C]/25 flex items-center justify-center text-[#E3C46A]">
+                  <div className="w-10 h-10 rounded-xl bg-[#121212] border border-[#303030] flex items-center justify-center text-[#D4AF5A]">
                     <Icon className="w-5 h-5" strokeWidth={1.75} />
                   </div>
-                  <h3 className="text-base font-semibold text-white">{f.title}</h3>
-                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">{f.desc}</p>
+                  <h3 className="text-base font-semibold text-[#F8F6F0]">{f.title}</h3>
+                  <p className="text-xs sm:text-sm text-[#B8B8B8] leading-relaxed">{f.desc}</p>
                 </div>
               );
             })}
@@ -125,33 +110,32 @@ export default function CollegeErpPage() {
       </section>
 
       {/* Who it's for */}
-      <section className="px-4 py-16 sm:py-20 bg-black">
+      <section className="px-4 py-16 sm:py-20 bg-[#080808]">
         <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-2xl sm:text-3xl font-light text-white">Which institutions use this?</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <h2 className="text-2xl sm:text-3xl font-light text-[#F8F6F0]">Who uses this ERP?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {college.targetAudience.map((t) => (
               <div
                 key={t}
-                className="flex items-start gap-3 p-5 rounded-2xl border border-white/10 shadow-lg backdrop-blur-md"
-                style={{ backgroundColor: "rgba(255, 255, 255, 0.01)" }}
+                className="flex items-start gap-3 p-5 rounded-2xl bg-[#121212] border border-[#303030] hover:border-[#D4AF5A]/60 transition-all duration-200 shadow-sm"
               >
-                <Users className="w-5 h-5 text-[#E3C46A] shrink-0 mt-0.5" strokeWidth={1.75} />
-                <span className="text-sm text-zinc-300 font-medium leading-snug">{t}</span>
+                <Users className="w-5 h-5 text-[#D4AF5A] shrink-0 mt-0.5" strokeWidth={1.75} />
+                <span className="text-sm text-[#F8F6F0] font-medium leading-snug">{t}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Problems */}
-      <section className="px-4 py-16 sm:py-20 bg-black border-y border-white/10">
+      {/* Problems we solve */}
+      <section className="px-4 py-16 sm:py-20 bg-[#121212] border-y border-[#303030]">
         <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-2xl sm:text-3xl font-light text-white">Common problems this solves</h2>
+          <h2 className="text-2xl sm:text-3xl font-light text-[#F8F6F0]">Common problems this solves</h2>
           <div className="space-y-3">
             {college.problemsSolved.map((p) => (
-              <div key={p} className="flex items-start gap-3.5 py-3.5 border-b border-white/8 last:border-0">
-                <span className="w-2 h-2 rounded-full bg-red-400 shrink-0 mt-2" />
-                <span className="text-sm text-zinc-300 leading-relaxed font-normal">{p}</span>
+              <div key={p} className="flex items-start gap-3.5 py-3.5 border-b border-[#303030] last:border-0">
+                <span className="w-2 h-2 rounded-full bg-[#D9534F] shrink-0 mt-2" />
+                <span className="text-sm text-[#F8F6F0] leading-relaxed font-normal">{p}</span>
               </div>
             ))}
           </div>
@@ -159,21 +143,20 @@ export default function CollegeErpPage() {
       </section>
 
       {/* Modules */}
-      <section className="px-4 py-16 sm:py-20 bg-black">
+      <section className="px-4 py-16 sm:py-20 bg-[#080808]">
         <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-2xl sm:text-3xl font-light text-white">Modules inside the software</h2>
+          <h2 className="text-2xl sm:text-3xl font-light text-[#F8F6F0]">Modules inside the software</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {college.modules.map((mod) => (
               <div
                 key={mod.name}
-                className="p-6 rounded-2xl border border-white/10 space-y-2 shadow-lg backdrop-blur-md hover:border-[#C49A2C]/40 transition-all"
-                style={{ backgroundColor: "rgba(255, 255, 255, 0.01)" }}
+                className="p-6 rounded-2xl bg-[#121212] border border-[#303030] hover:border-[#D4AF5A]/60 hover:bg-[#161616] space-y-2 transition-all duration-200 shadow-sm"
               >
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#C49A2C]" />
-                  <h3 className="text-sm font-semibold text-white">{mod.name}</h3>
+                  <span className="w-2 h-2 rounded-full bg-[#D4AF5A]" />
+                  <h3 className="text-sm font-semibold text-[#F8F6F0]">{mod.name}</h3>
                 </div>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">{mod.description}</p>
+                <p className="text-xs sm:text-sm text-[#B8B8B8] leading-relaxed">{mod.description}</p>
               </div>
             ))}
           </div>
@@ -181,13 +164,10 @@ export default function CollegeErpPage() {
       </section>
 
       {/* FAQs */}
-      <section className="px-4 py-16 sm:py-20 bg-black border-t border-white/10">
+      <section className="px-4 py-16 sm:py-20 bg-[#121212] border-t border-[#303030]">
         <div className="max-w-3xl mx-auto space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-light text-white">Frequently asked questions</h2>
-          <div
-            className="rounded-2xl border border-white/10 px-6 py-2 shadow-2xl backdrop-blur-md"
-            style={{ backgroundColor: "rgba(255, 255, 255, 0.01)" }}
-          >
+          <h2 className="text-2xl sm:text-3xl font-light text-[#F8F6F0]">Frequently asked questions</h2>
+          <div className="rounded-2xl bg-[#1A1A1A] border border-[#303030] px-6 py-2 shadow-sm">
             {college.faqs.map((f) => (
               <FaqItem key={f.question} q={f.question} a={f.answer} />
             ))}
@@ -198,24 +178,23 @@ export default function CollegeErpPage() {
       {/* Demo form */}
       <section
         id="request-demo"
-        className="px-4 py-16 sm:py-24 bg-black border-t border-white/10"
+        className="px-4 py-16 sm:py-24 bg-[#080808] border-t border-[#303030]"
       >
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-5">
-            <h2 className="text-3xl sm:text-4xl font-light text-white leading-tight">
-              See Qelvora College ERP configured for your institution.
+            <h2 className="text-3xl sm:text-4xl font-light text-[#F8F6F0] leading-tight">
+              See Qelvora College ERP in action.
             </h2>
-            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
-              We will show you the semester scheme setup, internal marks
-              workflow, and placement portal with sample data matching your
-              university guidelines.
+            <p className="text-[#B8B8B8] text-sm sm:text-base leading-relaxed">
+              Request a demo and we will walk through NEP credits, internal mark
+              calculations, and university exam exports.
             </p>
             <div className="space-y-3 pt-2">
               <a
                 href={siteConfig.phones.primary.tel}
-                className="inline-flex items-center gap-2 text-sm text-white font-medium hover:text-[#E3C46A] transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-[#F8F6F0] font-medium hover:text-[#D4AF5A] transition-colors duration-200"
               >
-                <Phone className="w-4 h-4 text-[#C49A2C]" />
+                <Phone className="w-4 h-4 text-[#D4AF5A]" />
                 {siteConfig.phones.primary.formatted}
               </a>
               <br />
@@ -223,7 +202,7 @@ export default function CollegeErpPage() {
                 href={siteConfig.whatsapp.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-emerald-400 font-medium hover:text-emerald-300 transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-[#328568] font-medium hover:underline transition-colors duration-200"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp us

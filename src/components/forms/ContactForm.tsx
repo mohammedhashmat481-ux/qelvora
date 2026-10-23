@@ -33,9 +33,9 @@ const productOptions = [
 ];
 
 const fieldClass =
-  "w-full bg-white/[0.04] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#C49A2C] focus:bg-white/[0.07] transition-colors";
-const labelClass = "block text-xs text-zinc-300 mb-1.5 font-medium";
-const errorClass = "text-xs text-red-400 mt-1";
+  "w-full bg-[#1A1A1A] border border-[#303030] rounded-lg px-4 py-2.5 text-sm text-[#F8F6F0] placeholder:text-[#858585] focus:outline-none focus:border-[#D4AF5A] focus:ring-1 focus:ring-[#D4AF5A] transition-colors duration-200";
+const labelClass = "block text-xs text-[#F8F6F0] mb-1.5 font-medium";
+const errorClass = "text-xs text-[#D9534F] mt-1";
 
 export function ContactForm({
   initialProductInterest = "",
@@ -99,16 +99,13 @@ export function ContactForm({
 
   if (isSuccess) {
     return (
-      <div
-        className="border border-emerald-500/30 rounded-2xl p-8 text-center space-y-5 shadow-2xl backdrop-blur-md"
-        style={{ backgroundColor: "rgba(255, 255, 255, 0.01)" }}
-      >
-        <div className="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 mx-auto flex items-center justify-center">
-          <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+      <div className="bg-[#121212] border border-[#328568]/40 rounded-2xl p-8 text-center space-y-5 shadow-lg">
+        <div className="w-12 h-12 rounded-full bg-[#328568]/20 border border-[#328568]/40 mx-auto flex items-center justify-center">
+          <CheckCircle2 className="w-6 h-6 text-[#328568]" />
         </div>
         <div className="space-y-2">
-          <h3 className="text-xl font-medium text-white">Message received!</h3>
-          <p className="text-sm text-zinc-400 max-w-md mx-auto leading-relaxed">
+          <h3 className="text-xl font-medium text-[#F8F6F0]">Message received!</h3>
+          <p className="text-sm text-[#B8B8B8] max-w-md mx-auto leading-relaxed">
             Thank you, {formData.name}. We will get back to you within one business day.
             You can also reach us right now on WhatsApp.
           </p>
@@ -118,7 +115,7 @@ export function ContactForm({
             href={siteConfig.whatsapp.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold transition-colors shadow-lg"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#328568] hover:bg-[#286f56] text-white text-sm font-semibold transition-colors duration-200 shadow-md"
           >
             <MessageCircle className="w-4 h-4" />
             Chat on WhatsApp
@@ -129,7 +126,7 @@ export function ContactForm({
               setIsSuccess(false);
               setFormData({ name: "", phone: "", email: "", organisationType: "School / K-12 Institution", productInterest: "", message: "", websiteHp: "" });
             }}
-            className="px-5 py-2.5 rounded-full bg-white/5 border border-white/15 text-white text-sm hover:bg-white/10 transition-colors"
+            className="px-5 py-2.5 rounded-full bg-[#1A1A1A] border border-[#454545] text-[#F8F6F0] hover:border-[#D4AF5A] hover:text-[#D4AF5A] text-sm transition-colors duration-200"
           >
             Send another message
           </button>
@@ -141,20 +138,19 @@ export function ContactForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="border border-white/10 rounded-2xl p-6 sm:p-8 space-y-5 shadow-2xl backdrop-blur-md"
-      style={{ backgroundColor: "rgba(255, 255, 255, 0.01)" }}
+      className="bg-[#121212] border border-[#303030] rounded-2xl p-6 sm:p-8 space-y-5 shadow-lg"
       noValidate
     >
-      <div className="border-b border-white/8 pb-4">
-        <h3 className="text-xl font-light text-white">{formTitle}</h3>
-        <p className="text-xs text-zinc-400 mt-1">
+      <div className="border-b border-[#303030] pb-4">
+        <h3 className="text-xl font-light text-[#F8F6F0]">{formTitle}</h3>
+        <p className="text-xs text-[#B8B8B8] mt-1">
           We reply within one business day. Your details are never shared.
         </p>
       </div>
 
       {generalError && (
-        <div role="alert" className="p-3.5 rounded-lg bg-red-500/10 border border-red-500/25 text-red-400 text-xs flex items-start gap-2.5">
-          <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+        <div role="alert" className="p-3.5 rounded-lg bg-[#D9534F]/10 border border-[#D9534F]/30 text-[#D9534F] text-xs flex items-start gap-2.5">
+          <AlertCircle className="w-4 h-4 text-[#D9534F] shrink-0 mt-0.5" />
           {generalError}
         </div>
       )}
@@ -175,7 +171,7 @@ export function ContactForm({
           <label htmlFor="phone" className={labelClass}>Phone number *</label>
           <input id="phone" name="phone" type="tel" placeholder="+91 98450 12345" required value={formData.phone} onChange={handleChange} className={fieldClass} aria-describedby={fieldErrors.phone ? "phone-err" : undefined} />
           {fieldErrors.phone && <p id="phone-err" className={errorClass}>{fieldErrors.phone}</p>}
-          <p className="text-xs text-zinc-500 mt-1">We&apos;ll call or WhatsApp this number</p>
+          <p className="text-xs text-[#858585] mt-1">We&apos;ll call or WhatsApp this number</p>
         </div>
       </div>
 
@@ -187,7 +183,7 @@ export function ContactForm({
         </div>
         <div>
           <label htmlFor="organisationType" className={labelClass}>Organisation type *</label>
-          <select id="organisationType" name="organisationType" required value={formData.organisationType} onChange={handleChange} className={`${fieldClass} [&>option]:bg-zinc-900 [&>option]:text-white`}>
+          <select id="organisationType" name="organisationType" required value={formData.organisationType} onChange={handleChange} className={`${fieldClass} [&>option]:bg-[#1A1A1A] [&>option]:text-[#F8F6F0]`}>
             {orgOptions.map((o) => <option key={o} value={o}>{o}</option>)}
           </select>
         </div>
@@ -195,7 +191,7 @@ export function ContactForm({
 
       <div>
         <label htmlFor="productInterest" className={labelClass}>What are you interested in?</label>
-        <select id="productInterest" name="productInterest" value={formData.productInterest} onChange={handleChange} className={`${fieldClass} [&>option]:bg-zinc-900 [&>option]:text-white`}>
+        <select id="productInterest" name="productInterest" value={formData.productInterest} onChange={handleChange} className={`${fieldClass} [&>option]:bg-[#1A1A1A] [&>option]:text-[#F8F6F0]`}>
           {productOptions.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
         </select>
       </div>
@@ -210,7 +206,7 @@ export function ContactForm({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed min-w-[140px] shadow-lg"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-[#D4AF5A] hover:bg-[#E8C76A] text-[#080808] text-sm font-semibold transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed min-w-[140px] shadow-md"
         >
           {isSubmitting ? (
             <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</>
@@ -218,9 +214,9 @@ export function ContactForm({
             "Send message"
           )}
         </button>
-        <p className="text-xs text-zinc-400 text-center sm:text-right">
+        <p className="text-xs text-[#B8B8B8] text-center sm:text-right">
           Or call us:{" "}
-          <a href={siteConfig.phones.primary.tel} className="text-[#E3C46A] font-medium hover:underline font-mono">
+          <a href={siteConfig.phones.primary.tel} className="text-[#D4AF5A] hover:text-[#E8C76A] font-medium hover:underline font-mono">
             {siteConfig.phones.primary.formatted}
           </a>
         </p>

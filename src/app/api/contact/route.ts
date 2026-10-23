@@ -81,13 +81,13 @@ export async function POST(req: NextRequest) {
 
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px;">
-        <h2 style="color: #121212; border-bottom: 2px solid #C49A2C; padding-bottom: 10px;">New Inquiry from Qelvora.in</h2>
+        <h2 style="color: #121212; border-bottom: 2px solid #D4AF5A; padding-bottom: 10px;">New Inquiry from Qelvora.in</h2>
         <p><strong>Full Name:</strong> ${name}</p>
         <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
         <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
         <p><strong>Organisation Type:</strong> ${organisationType}</p>
         ${productInterest ? `<p><strong>Product Interest:</strong> ${productInterest}</p>` : ""}
-        <div style="margin-top: 15px; padding: 15px; background: #f9f9f9; border-left: 3px solid #C49A2C;">
+        <div style="margin-top: 15px; padding: 15px; background: #f9f9f9; border-left: 3px solid #D4AF5A;">
           <strong>Message:</strong>
           <p style="white-space: pre-wrap; margin: 5px 0 0 0;">${message}</p>
         </div>
