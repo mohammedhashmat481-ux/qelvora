@@ -75,6 +75,7 @@ export const siteConfig: SiteConfig = {
   description:
     "Bangalore-based software studio crafting custom business software, CRM platforms, and School & College ERP systems from scratch with direct developer collaboration.",
   navLinks: [
+    { label: "Home", href: "/" },
     { label: "Products", href: "/#products" },
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },

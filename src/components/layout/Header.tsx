@@ -36,6 +36,7 @@ export function Header() {
   }, [isOpen]);
 
   const navLinks = [
+    { label: "Home", href: "/" },
     { label: "Products", href: "/#products" },
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
@@ -52,13 +53,19 @@ export function Header() {
         <Logo size="md" />
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-400" aria-label="Main navigation">
-          {navLinks.map((n) => (
-            <Link key={n.href} href={n.href}
-              className="hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm">
-              {n.label}
-            </Link>
-          ))}
+        <nav className="hidden md:flex items-center gap-7 text-sm text-zinc-400" aria-label="Main navigation">
+          {navLinks.map((n) => {
+            const isActive = pathname === n.href;
+            return (
+              <Link key={n.href} href={n.href}
+                className={cn(
+                  "hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm",
+                  isActive && "text-white font-medium"
+                )}>
+                {n.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Desktop CTA */}
