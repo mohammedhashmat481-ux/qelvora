@@ -41,13 +41,30 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 px-4">
-        {/* Background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#C49A2C]/6 rounded-full blur-[120px] pointer-events-none" aria-hidden />
+      <section className="relative pt-32 pb-24 sm:pt-40 sm:pb-32 px-4 overflow-hidden">
+        {/* Background 98% transparent watermark logo */}
+        <div
+          className="absolute -right-12 sm:right-0 lg:right-12 top-1/2 -translate-y-1/2 w-[420px] sm:w-[620px] lg:w-[780px] pointer-events-none select-none opacity-[0.04] z-0"
+          aria-hidden="true"
+        >
+          <Image
+            src="/logo-emblem.png"
+            alt=""
+            width={358}
+            height={373}
+            priority
+            className="w-full h-auto object-contain"
+          />
+        </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left */}
-          <div className="space-y-7">
+        {/* Soft warm-gold ambient glow */}
+        <div
+          className="absolute top-1/3 right-1/4 w-[600px] h-[400px] bg-[#C49A2C]/[0.06] rounded-full blur-[140px] pointer-events-none z-0"
+          aria-hidden="true"
+        />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="max-w-3xl space-y-7">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-[#E3C46A] font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C49A2C] animate-pulse" />
               Bengaluru Software Studio
@@ -58,14 +75,14 @@ export default function HomePage() {
               <span className="text-[#E3C46A]">advancing tomorrow.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl">
               We build software for schools, colleges, and businesses in India.
               CRM systems, School ERP, College ERP, websites, and mobile apps — all built from scratch, designed for the way you actually work.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link href="/contact"
-                className="px-7 py-3.5 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors min-h-[48px] flex items-center">
+                className="px-8 py-3.5 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors min-h-[48px] flex items-center">
                 Talk to us
               </Link>
               <a href={siteConfig.phones.primary.tel}
@@ -76,7 +93,7 @@ export default function HomePage() {
             </div>
 
             {/* Quick credibility points */}
-            <div className="pt-2 flex flex-wrap gap-x-6 gap-y-2 text-xs text-zinc-500">
+            <div className="pt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-zinc-500">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A2C]" /> Direct with developers
               </span>
@@ -86,21 +103,6 @@ export default function HomePage() {
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A2C]" /> Thanisandra, Bengaluru
               </span>
-            </div>
-          </div>
-
-          {/* Right — Official QelVora Gold Emblem */}
-          <div className="flex items-center justify-center py-6 lg:py-0">
-            <div className="w-64 h-64 sm:w-80 sm:h-80 relative flex items-center justify-center">
-              <div className="absolute inset-0 bg-[#C49A2C]/15 rounded-full blur-3xl pointer-events-none" />
-              <Image
-                src="/logo-icon.png"
-                alt="Qelvora Technology"
-                width={373}
-                height={373}
-                priority
-                className="w-56 h-56 sm:w-72 sm:h-72 object-contain relative z-10 drop-shadow-[0_10px_25px_rgba(196,154,44,0.25)]"
-              />
             </div>
           </div>
         </div>
