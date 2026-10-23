@@ -51,7 +51,7 @@ export default function IndustriesPage() {
             Software built for{" "}
             <span className="text-[#D4AF5A]">your type of business.</span>
           </h1>
-          <p className="text-base sm:text-lg text-[#B8B8B8] leading-relaxed max-w-2xl">
+          <p className="text-base sm:text-lg text-[#F8F6F0] leading-relaxed max-w-2xl">
             We work with schools, colleges, small businesses, clinics, and
             retail shops across India. Each industry has its own way of working
             — and we build software that fits exactly that.

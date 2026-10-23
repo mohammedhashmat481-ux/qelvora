@@ -25,7 +25,7 @@ export default function ContactPage() {
             Let&apos;s talk about{" "}
             <span className="text-[#D4AF5A]">what you need.</span>
           </h1>
-          <p className="text-base text-[#B8B8B8] leading-relaxed max-w-xl">
+          <p className="text-base text-[#F8F6F0] leading-relaxed max-w-xl">
             No sales pitch. Just a straightforward conversation about your
             project. Call, WhatsApp, or fill the form below.
           </p>

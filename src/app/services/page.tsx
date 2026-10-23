@@ -44,7 +44,7 @@ export default function ServicesPage() {
             Software built for your business,{" "}
             <span className="text-[#D4AF5A]">not a generic template.</span>
           </h1>
-          <p className="text-base sm:text-lg text-[#B8B8B8] leading-relaxed max-w-2xl">
+          <p className="text-base sm:text-lg text-[#F8F6F0] leading-relaxed max-w-2xl">
             We build custom software, websites, mobile apps, and cloud systems
             from scratch. Everything is made specifically for you — no
             copy-paste solutions.

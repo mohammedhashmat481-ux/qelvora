@@ -44,7 +44,7 @@ export default function HomePage() {
       <section className="relative pt-32 pb-24 sm:pt-40 sm:pb-32 px-4 overflow-hidden bg-[#080808] text-[#F8F6F0] border-b border-[#303030]">
         {/* Subtle company logo watermark in hero section only (5–12% opacity) */}
         <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] lg:w-[960px] pointer-events-none select-none opacity-[0.09] z-0 flex items-center justify-center"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] lg:w-[960px] pointer-events-none select-none opacity-[0.06] z-0 flex items-center justify-center"
           aria-hidden="true"
         >
           <Image
@@ -69,7 +69,7 @@ export default function HomePage() {
               <span className="text-[#D4AF5A]">advancing tomorrow.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[#B8B8B8] leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg text-[#F8F6F0] font-normal leading-relaxed max-w-2xl">
               We build software for schools, colleges, and businesses in India.
               CRM systems, School ERP, College ERP, websites, and mobile apps — all built from scratch, designed for the way you actually work.
             </p>
