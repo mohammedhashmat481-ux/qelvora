@@ -39,9 +39,9 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="text-white min-h-screen bg-transparent">
       {/* ── HERO ── */}
-      <section className="relative pt-32 pb-24 sm:pt-40 sm:pb-32 px-4 overflow-hidden bg-black text-white border-b border-white/10">
+      <section className="relative pt-32 pb-24 sm:pt-40 sm:pb-32 px-4 overflow-hidden bg-transparent text-white border-b border-white/10">
         {/* Background gold logo watermark on pure black background */}
         <div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] lg:w-[960px] pointer-events-none select-none opacity-[0.15] z-0 flex items-center justify-center"
@@ -114,7 +114,7 @@ export default function HomePage() {
       {/* ── PRODUCTS ── */}
       <section
         id="products"
-        className="py-20 px-4 border-t border-white/10 relative overflow-hidden bg-black"
+        className="py-20 px-4 border-t border-white/10 relative overflow-hidden bg-transparent"
       >
         <div className="max-w-6xl mx-auto space-y-4 mb-14">
           <div
@@ -271,7 +271,7 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES (hairline rows) ── */}
-      <section className="py-20 px-4 bg-black border-t border-white/10">
+      <section className="py-20 px-4 bg-transparent border-t border-white/10">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <div className="space-y-3">
@@ -315,7 +315,7 @@ export default function HomePage() {
       </section>
 
       {/* ── WHO WE BUILD FOR ── */}
-      <section className="py-20 px-4 bg-black border-t border-white/10">
+      <section className="py-20 px-4 bg-transparent border-t border-white/10">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-3">
             <div
@@ -364,7 +364,7 @@ export default function HomePage() {
       </section>
 
       {/* ── HOW WE WORK (4 steps) ── */}
-      <section className="py-20 px-4 bg-black border-t border-white/10">
+      <section className="py-20 px-4 bg-transparent border-t border-white/10">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-3">
             <div
@@ -401,7 +401,7 @@ export default function HomePage() {
       </section>
 
       {/* ── WHY QELVORA ── */}
-      <section className="py-20 px-4 bg-black border-t border-white/10">
+      <section className="py-20 px-4 bg-transparent border-t border-white/10">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-3">
             <div
@@ -441,7 +441,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="py-24 px-4 bg-black border-t border-white/10">
+      <section className="py-24 px-4 bg-transparent border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 text-xs text-[#E3C46A] font-medium mx-auto"
