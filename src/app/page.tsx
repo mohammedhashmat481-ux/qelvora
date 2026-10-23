@@ -1,17 +1,43 @@
 import React from "react";
 import Link from "next/link";
 import { AnimatedQMark } from "@/components/brand/AnimatedQMark";
-import { CrmMockup } from "@/components/mockups/CrmMockup";
-import { SchoolErpMockup } from "@/components/mockups/SchoolErpMockup";
-import { CollegeErpMockup } from "@/components/mockups/CollegeErpMockup";
 import { siteConfig } from "@/data/site";
 import {
   Phone, MessageCircle, ArrowRight, CheckCircle2,
   Building2, GraduationCap, Briefcase, Stethoscope, ShoppingBag,
-  Users, ShieldCheck, MapPin, Headphones
+  Users, ShieldCheck, MapPin, Headphones,
+  MessageSquare, FileText, Clock, TrendingUp, UserCheck,
+  CreditCard, CalendarCheck, Bus, BookOpen, Award, Wallet
 } from "lucide-react";
 
 export default function HomePage() {
+  const crmFeatures = [
+    { icon: MessageSquare, title: "WhatsApp & Call Connect", desc: "Chat with leads directly on WhatsApp in 1 click without saving numbers. Keeps full customer chat notes." },
+    { icon: UserCheck, title: "Lead & Inquiry Inbox", desc: "Capture every inquiry from phone calls, your website, and messages. Never lose a paying client." },
+    { icon: FileText, title: "1-Click GST Quotations", desc: "Generate clean GST quotes & bills with CGST/SGST in 30 seconds and download branded PDFs." },
+    { icon: Clock, title: "Follow-Up Reminders", desc: "Automatic reminders for your sales team so quotes and callbacks are never forgotten." },
+    { icon: TrendingUp, title: "Visual Sales Pipeline", desc: "See every deal clearly from New Enquiry → Quote Sent → Deal Closed in real time." },
+    { icon: Phone, title: "Customer History", desc: "All past conversations, quotes, and notes for each customer stored safely in one profile." },
+  ];
+
+  const schoolFeatures = [
+    { icon: CreditCard, title: "Fee Collection & Receipts", desc: "Collect school fees, print instant receipts, track pending dues, and send automatic fee reminders to parents." },
+    { icon: CalendarCheck, title: "Daily Attendance & Absent SMS", desc: "Take daily attendance in 1 minute. Parents immediately receive an automated alert if their child is absent." },
+    { icon: GraduationCap, title: "Report Cards & Marksheets", desc: "Enter test marks once. Automatically calculates grades and prints beautiful CBSE or State Board report cards." },
+    { icon: MessageCircle, title: "Parent WhatsApp Notices", desc: "Send school circulars, homework, holiday notices, and emergency alerts straight to parents' phones." },
+    { icon: Users, title: "Admissions & Student Records", desc: "Manage new admission forms, student profiles, transfer certificates (TC), and parent contacts securely." },
+    { icon: Bus, title: "Bus & Transport Tracking", desc: "Manage school bus routes, student pickup stops, driver contact details, and transport fees with ease." },
+  ];
+
+  const collegeFeatures = [
+    { icon: BookOpen, title: "Semester & Course Schemes", desc: "Manage academic departments, syllabus credits (NEP & CBCS), open electives, and class timetables." },
+    { icon: CalendarCheck, title: "Attendance & Hall Ticket Eligibility", desc: "Subject-wise attendance tracking with automatic 75% cutoff calculations for university exam hall tickets." },
+    { icon: Award, title: "Internal Marks & University Exports", desc: "Record internal test marks (CIE) and export marksheet files formatted for your affiliating university." },
+    { icon: Wallet, title: "Fee & Govt Scholarship Ledgers", desc: "Manage student semester fee ledgers, quota fees (CET/Management), and adjust SSP/NSP scholarships." },
+    { icon: Briefcase, title: "Campus Placements & Drives", desc: "Filter eligible students by CGPA or backlogs, announce recruiter drives, and track job offers easily." },
+    { icon: Users, title: "Faculty Workload & Alumni Network", desc: "Track teaching faculty workloads, student feedback ratings, and maintain a permanent alumni database." },
+  ];
+
   return (
     <>
       {/* ── HERO ── */}
@@ -49,110 +75,152 @@ export default function HomePage() {
               </a>
             </div>
 
-            {/* Quick trust signals */}
-            <div className="flex flex-wrap gap-5 text-xs text-zinc-500 pt-2 border-t border-white/[0.07]">
-              {["Talk directly with engineers", "Fixed price before we start", "Built for Indian workflows"].map((point) => (
-                <div key={point} className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A2C]" />
-                  {point}
-                </div>
-              ))}
+            {/* Quick credibility points */}
+            <div className="pt-2 flex flex-wrap gap-x-6 gap-y-2 text-xs text-zinc-500">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A2C]" /> Direct with developers
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A2C]" /> Fixed price upfront
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A2C]" /> Thanisandra, Bengaluru
+              </span>
             </div>
           </div>
 
-          {/* Right — Animated Q mark */}
-          <div className="flex justify-center lg:justify-end">
-            <AnimatedQMark theme="dark" className="w-72 h-72 sm:w-80 sm:h-80" />
+          {/* Right — Animated Q logo mark */}
+          <div className="flex items-center justify-center py-6 lg:py-0">
+            <div className="w-64 h-64 sm:w-80 sm:h-80 relative flex items-center justify-center">
+              <div className="absolute inset-0 bg-[#C49A2C]/10 rounded-full blur-3xl pointer-events-none" />
+              <AnimatedQMark className="w-full h-full relative z-10" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── PRODUCTS ── */}
       <section id="products" className="py-20 px-4">
-        <div className="max-w-6xl mx-auto space-y-5 mb-14">
-          <h2 className="text-3xl sm:text-4xl font-light text-white">Our software products</h2>
+        <div className="max-w-6xl mx-auto space-y-4 mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-[#E3C46A] font-medium">
+            Ready-to-Deploy Software
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-light text-white">Our software products &amp; key features</h2>
           <p className="text-base text-zinc-400 max-w-2xl">
-            Three ready-to-deploy platforms. Each is customised to your institution or business before go-live.
+            Everything your team needs to run daily operations smoothly. Here is what is included in each platform.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto space-y-16">
-          {/* CRM */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-5 space-y-5">
-              <span className="badge-gold">Sales & Client Management</span>
-              <h3 className="text-2xl font-medium text-white">Qelvora CRM</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                Track every lead, send GST-ready quotations, and log WhatsApp follow-ups — all in one place.
-                No more lost inquiries in personal chat apps.
-              </p>
-              <ul className="space-y-2 text-sm text-zinc-300">
-                {["Drag-and-drop lead pipeline in ₹", "Generate GST quotes (CGST/SGST/IGST) in 1 click", "WhatsApp and call log per client", "Daily follow-up reminders for your team"].map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#C49A2C] shrink-0 mt-0.5" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
+        <div className="max-w-6xl mx-auto space-y-12">
+          {/* 1. CRM */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#18181B] border border-white/10 space-y-7">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/8">
+              <div className="space-y-2">
+                <span className="badge-gold">Sales &amp; Client Management</span>
+                <h3 className="text-2xl sm:text-3xl font-medium text-white">Qelvora CRM</h3>
+                <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed">
+                  Track every lead, send GST-ready quotations, and log WhatsApp follow-ups in one place. No more lost inquiries in personal chat apps.
+                </p>
+              </div>
               <Link href="/products/crm"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors">
-                See full details <ArrowRight className="w-4 h-4" />
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors shrink-0">
+                Explore CRM details <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <div className="lg:col-span-7"><CrmMockup /></div>
+
+            <div>
+              <p className="text-xs uppercase tracking-wider text-[#E3C46A] font-medium mb-4">
+                Features included in Qelvora CRM:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {crmFeatures.map((f) => {
+                  const Icon = f.icon;
+                  return (
+                    <div key={f.title} className="p-4 rounded-xl bg-[#141416] border border-white/[0.06] space-y-2">
+                      <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/10 border border-[#C49A2C]/20 flex items-center justify-center text-[#E3C46A]">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <h4 className="text-sm font-medium text-white">{f.title}</h4>
+                      <p className="text-xs text-zinc-400 leading-relaxed">{f.desc}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
-          <div className="gold-line" />
-
-          {/* School ERP */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 order-2 lg:order-1"><SchoolErpMockup /></div>
-            <div className="lg:col-span-5 space-y-5 order-1 lg:order-2">
-              <span className="badge-gold">K-12 School Management</span>
-              <h3 className="text-2xl font-medium text-white">Qelvora School ERP</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                From fee collection to report cards — handle your entire school administration from one screen.
-                Works for CBSE, ICSE, and State Board schools.
-              </p>
-              <ul className="space-y-2 text-sm text-zinc-300">
-                {["Fee receipt printing in seconds", "Automatic parent SMS/WhatsApp for absent students", "CBSE and State Board report card generator", "Bus route and transport management"].map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#C49A2C] shrink-0 mt-0.5" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
+          {/* 2. School ERP */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#18181B] border border-white/10 space-y-7">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/8">
+              <div className="space-y-2">
+                <span className="badge-gold">K-12 School Management</span>
+                <h3 className="text-2xl sm:text-3xl font-medium text-white">Qelvora School ERP</h3>
+                <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed">
+                  From fee collection to report cards — handle your entire school administration from one screen. Works for CBSE, ICSE, and State Board schools.
+                </p>
+              </div>
               <Link href="/products/school-erp"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors">
-                See full details <ArrowRight className="w-4 h-4" />
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors shrink-0">
+                Explore School ERP details <ArrowRight className="w-4 h-4" />
               </Link>
+            </div>
+
+            <div>
+              <p className="text-xs uppercase tracking-wider text-[#E3C46A] font-medium mb-4">
+                Features included in Qelvora School ERP:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {schoolFeatures.map((f) => {
+                  const Icon = f.icon;
+                  return (
+                    <div key={f.title} className="p-4 rounded-xl bg-[#141416] border border-white/[0.06] space-y-2">
+                      <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/10 border border-[#C49A2C]/20 flex items-center justify-center text-[#E3C46A]">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <h4 className="text-sm font-medium text-white">{f.title}</h4>
+                      <p className="text-xs text-zinc-400 leading-relaxed">{f.desc}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
-          <div className="gold-line" />
-
-          {/* College ERP */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-5 space-y-5">
-              <span className="badge-gold">Higher Education Management</span>
-              <h3 className="text-2xl font-medium text-white">Qelvora College ERP</h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                Built for degree colleges and autonomous institutions. Handle semester credits, internal marks, government scholarships, and placement drives — all CBCS and NEP ready.
-              </p>
-              <ul className="space-y-2 text-sm text-zinc-300">
-                {["CBCS credit and elective management", "Automatic university marks export file", "SSP/NSP government scholarship tracking", "Campus placement drive with eligibility filter"].map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#C49A2C] shrink-0 mt-0.5" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
+          {/* 3. College ERP */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#18181B] border border-white/10 space-y-7">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/8">
+              <div className="space-y-2">
+                <span className="badge-gold">Higher Education Management</span>
+                <h3 className="text-2xl sm:text-3xl font-medium text-white">Qelvora College ERP</h3>
+                <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed">
+                  Built for degree colleges and autonomous institutions. Handle semester credits, internal marks, government scholarships, and placement drives — all CBCS and NEP ready.
+                </p>
+              </div>
               <Link href="/products/college-erp"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors">
-                See full details <ArrowRight className="w-4 h-4" />
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors shrink-0">
+                Explore College ERP details <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <div className="lg:col-span-7"><CollegeErpMockup /></div>
+
+            <div>
+              <p className="text-xs uppercase tracking-wider text-[#E3C46A] font-medium mb-4">
+                Features included in Qelvora College ERP:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {collegeFeatures.map((f) => {
+                  const Icon = f.icon;
+                  return (
+                    <div key={f.title} className="p-4 rounded-xl bg-[#141416] border border-white/[0.06] space-y-2">
+                      <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/10 border border-[#C49A2C]/20 flex items-center justify-center text-[#E3C46A]">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <h4 className="text-sm font-medium text-white">{f.title}</h4>
+                      <p className="text-xs text-zinc-400 leading-relaxed">{f.desc}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -173,23 +241,22 @@ export default function HomePage() {
           <div className="border-t border-white/[0.08]">
             {[
               { num: "01", title: "Custom software development", desc: "Internal tools, billing systems, ERP modules — anything built to match your exact process." },
-              { num: "02", title: "Website and web app development", desc: "Fast, mobile-friendly websites and client portals. Optimised for Indian internet speeds." },
-              { num: "03", title: "Mobile app development", desc: "Android and iOS apps for your field staff, students, parents, or customers." },
-              { num: "04", title: "Cloud and automation", desc: "Automate daily tasks — WhatsApp alerts, backup jobs, invoice emails — so your team can focus on real work." },
-              { num: "05", title: "IT consulting and support", desc: "Direct advice from engineers, not a call centre. Monthly maintenance contracts available." },
-            ].map((svc) => (
-              <div key={svc.num}
-                className="py-6 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 items-baseline border-b border-white/[0.08] hover:bg-white/[0.02] transition-colors px-2 -mx-2 rounded-sm group">
-                <div className="md:col-span-1 text-xs font-mono text-[#C49A2C]">{svc.num}</div>
-                <div className="md:col-span-4">
-                  <h3 className="text-base sm:text-lg font-medium text-white group-hover:text-[#E3C46A] transition-colors">{svc.title}</h3>
+              { num: "02", title: "Websites and web apps", desc: "Fast Next.js websites, client portals, and web platforms that load in under a second." },
+              { num: "03", title: "Mobile app development", desc: "Android and iOS apps designed for fast offline use and budget mobile devices." },
+              { num: "04", title: "Cloud and automation", desc: "Automate daily WhatsApp alerts, PDF receipts, database backups, and server scaling." },
+              { num: "05", title: "IT consulting and support", desc: "Direct guidance from senior developers. Code audits, security fixes, and monthly maintenance." },
+            ].map((s) => (
+              <div key={s.num} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-6 border-b border-white/[0.08] hover:bg-white/[0.02] px-2 transition-colors">
+                <div className="flex items-start sm:items-center gap-5">
+                  <span className="text-xs font-mono text-[#C49A2C] font-semibold">{s.num}</span>
+                  <div>
+                    <h3 className="text-base font-medium text-white">{s.title}</h3>
+                    <p className="text-xs text-zinc-400 mt-0.5">{s.desc}</p>
+                  </div>
                 </div>
-                <div className="md:col-span-6 text-sm text-zinc-400 leading-relaxed">{svc.desc}</div>
-                <div className="md:col-span-1 flex md:justify-end">
-                  <Link href={`/services`} className="text-xs text-[#C49A2C] hover:text-[#E3C46A] flex items-center gap-1">
-                    Details <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
+                <Link href="/services" className="text-xs text-[#C49A2C] hover:text-[#E3C46A] flex items-center gap-1 shrink-0 self-end sm:self-auto">
+                  Learn more <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             ))}
           </div>
@@ -197,54 +264,65 @@ export default function HomePage() {
       </section>
 
       {/* ── WHO WE BUILD FOR ── */}
-      <section className="py-20 px-4 border-t border-white/[0.07]">
-        <div className="max-w-6xl mx-auto">
-          <div className="space-y-3 mb-12">
+      <section className="py-20 px-4 bg-[#141416] border-t border-white/[0.07]">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="space-y-3">
             <h2 className="text-3xl sm:text-4xl font-light text-white">Who we build for</h2>
-            <p className="text-base text-zinc-400">We work with organisations that have outgrown spreadsheets and WhatsApp groups.</p>
+            <p className="text-base text-zinc-400 max-w-xl">
+              Software tailored to the unique operational reality of each sector.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
-              { icon: GraduationCap, title: "Schools", desc: "State board, CBSE, ICSE schools — fee management, attendance, report cards, and parent alerts." },
-              { icon: Building2, title: "Colleges and Universities", desc: "Degree colleges and autonomous institutes — semester marks, placements, scholarships." },
-              { icon: Briefcase, title: "Small & Medium Businesses", desc: "Distributors, agencies, service companies — CRM, quotations, and operations tools." },
-              { icon: Stethoscope, title: "Clinics and Healthcare", desc: "Patient records, appointments, prescriptions, and SMS reminders for doctors." },
-              { icon: ShoppingBag, title: "Retail and Service Shops", desc: "Job cards, inventory alerts, billing, and customer due tracking for shops." },
-              { icon: Briefcase, title: "Startups", desc: "Early-stage startups that need a clean internal system or a client-facing web portal." },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title}
-                className="bg-[#18181B] border border-white/[0.07] rounded-panel p-6 space-y-3 hover:border-[#C49A2C]/30 transition-colors">
-                <div className="w-9 h-9 rounded-lg bg-[#C49A2C]/10 flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-[#C49A2C]" />
+              { icon: GraduationCap, label: "Schools", sub: "CBSE & State Board", desc: "Fee collection, report cards, daily attendance, parent SMS." },
+              { icon: Building2, label: "Colleges", sub: "Degree & Autonomous", desc: "CBCS credits, internal marks, placements, scholarships." },
+              { icon: Briefcase, label: "SMBs & Startups", sub: "Growth businesses", desc: "Custom CRM, quotation pipelines, customer portals." },
+              { icon: Stethoscope, label: "Clinics", sub: "Healthcare", desc: "Patient appointments, medical records, digital prescriptions." },
+              { icon: ShoppingBag, label: "Retail & Shops", sub: "Trade & Service", desc: "Billing, inventory tracking, service job cards, supplier orders." },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.label} className="p-5 rounded-xl bg-[#18181B] border border-white/[0.07] space-y-3 flex flex-col justify-between">
+                  <div className="space-y-2">
+                    <div className="w-9 h-9 rounded-lg bg-[#C49A2C]/10 flex items-center justify-center text-[#E3C46A]">
+                      <Icon className="w-4.5 h-4.5" />
+                    </div>
+                    <h3 className="text-sm font-semibold text-white">{item.label}</h3>
+                    <p className="text-[11px] text-[#C49A2C] font-mono">{item.sub}</p>
+                    <p className="text-xs text-zinc-400 leading-relaxed">{item.desc}</p>
+                  </div>
+                  <Link href="/industries" className="text-xs text-zinc-500 hover:text-[#E3C46A] flex items-center gap-1 pt-1">
+                    See details <ArrowRight className="w-3 h-3" />
+                  </Link>
                 </div>
-                <h3 className="text-base font-medium text-white">{title}</h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">{desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* ── HOW WE WORK ── */}
+      {/* ── HOW WE WORK (4 steps) ── */}
       <section className="py-20 px-4 border-t border-white/[0.07]">
-        <div className="max-w-6xl mx-auto">
-          <div className="space-y-3 mb-12">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="space-y-3">
             <h2 className="text-3xl sm:text-4xl font-light text-white">How we work</h2>
-            <p className="text-base text-zinc-400 max-w-xl">A simple 4-step process. No surprises.</p>
+            <p className="text-base text-zinc-400 max-w-xl">
+              A transparent, four-step process with no hidden costs and direct engineer access.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { n: "01", title: "Listen", desc: "We spend time understanding your day-to-day work — what's slow, what causes mistakes, what staff find frustrating." },
-              { n: "02", title: "Plan", desc: "We write down exactly what we will build, what it will cost, and when each part will be done. You approve before we start." },
-              { n: "03", title: "Build", desc: "We build your software and show you working versions every two weeks so you can give feedback early." },
-              { n: "04", title: "Support", desc: "We train your staff, move your existing data in, and stay available for fixes and improvements after launch." },
-            ].map(({ n, title, desc }) => (
-              <div key={n} className="bg-[#18181B] border border-white/[0.07] rounded-panel p-6 space-y-3">
-                <span className="text-3xl font-light font-mono text-[#E3C46A]">{n}</span>
-                <h3 className="text-base font-medium text-white">{title}</h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">{desc}</p>
+              { step: "01", title: "Listen", desc: "We sit down with you to understand how you currently work, what slows your team down, and what you actually need." },
+              { step: "02", title: "Plan", desc: "We document the full scope, screens, milestones, and price before writing any code. No surprise bills later." },
+              { step: "03", title: "Build", desc: "You review working software every two weeks. We build iteratively so what you see is what you get." },
+              { step: "04", title: "Support", desc: "We train your staff, migrate your data, and provide continuous support after launch. We don't vanish." },
+            ].map((step) => (
+              <div key={step.step} className="p-6 rounded-xl bg-[#18181B] border border-white/[0.07] space-y-3">
+                <span className="text-2xl font-light text-[#E3C46A] font-mono">{step.step}</span>
+                <h3 className="text-lg font-medium text-white">{step.title}</h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -252,73 +330,66 @@ export default function HomePage() {
       </section>
 
       {/* ── WHY QELVORA ── */}
-      <section className="py-20 px-4 border-t border-white/[0.07]">
-        <div className="max-w-6xl mx-auto">
-          <div className="space-y-3 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-light text-white">Why clients choose us</h2>
-            <p className="text-base text-zinc-400 max-w-xl">Honest points. No marketing fluff.</p>
+      <section className="py-20 px-4 bg-[#141416] border-t border-white/[0.07]">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="space-y-3">
+            <h2 className="text-3xl sm:text-4xl font-light text-white">Why Qelvora</h2>
+            <p className="text-base text-zinc-400">Honest reasons clients choose to work with us.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Users, title: "You talk directly to the engineers", desc: "No account managers or call centres. The person who answers your call is also the person writing your code." },
-              { icon: ShieldCheck, title: "Clear price before we start", desc: "We write a detailed scope document with exact costs and delivery dates. You only pay what was agreed, nothing extra." },
-              { icon: MapPin, title: "Built for Indian operations", desc: "GST calculations, local fee structures, WhatsApp alerts, multilingual support — we build for how India actually works." },
-              { icon: Headphones, title: "Training and support after launch", desc: "We come to your office, train your staff, and stay available after launch for questions and improvements." },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title}
-                className="bg-[#18181B] border border-white/[0.07] rounded-panel p-6 space-y-3 hover:border-[#C49A2C]/25 transition-colors">
-                <div className="w-9 h-9 rounded-lg bg-[#C49A2C]/10 flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-[#C49A2C]" />
+              { icon: Users, title: "Talk to the developer", desc: "You speak directly to the engineer writing your code. No account managers playing telephone." },
+              { icon: ShieldCheck, title: "Clear scope & price", desc: "Full specifications and pricing confirmed upfront. No scope-creep surcharges." },
+              { icon: MapPin, title: "Built for local needs", desc: "GST calculations, Indian fee structures, regional languages, and WhatsApp workflows natively built-in." },
+              { icon: Headphones, title: "Support after launch", desc: "We train your staff, help transfer data, and provide ongoing SLAs. We stay with you." },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="p-6 rounded-xl bg-[#18181B] border border-white/[0.07] space-y-3">
+                  <div className="w-9 h-9 rounded-lg bg-[#C49A2C]/10 flex items-center justify-center text-[#E3C46A]">
+                    <Icon className="w-4.5 h-4.5" />
+                  </div>
+                  <h3 className="text-sm font-semibold text-white">{item.title}</h3>
+                  <p className="text-xs text-zinc-400 leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="text-base font-medium text-white">{title}</h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">{desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* ── CONTACT BAND ── */}
-      <section className="py-20 px-4 border-t border-white/[0.07]" style={{ background: "linear-gradient(100deg, #1A150A 0%, #111113 60%)" }}>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-5">
-            <h2 className="text-3xl sm:text-4xl font-light text-white">Ready to talk?</h2>
-            <p className="text-base text-zinc-400 leading-relaxed max-w-lg">
-              Call us, WhatsApp us, or fill the contact form. We will reply within one business day with honest advice about your requirement.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-2">
-              <Link href="/contact"
-                className="px-7 py-3.5 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors min-h-[48px] flex items-center">
-                Send a message
-              </Link>
-              <a href={siteConfig.whatsapp.url} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600/10 border border-emerald-500/25 text-emerald-400 hover:bg-emerald-600/20 text-sm font-medium transition-all min-h-[48px]">
-                <MessageCircle className="w-4 h-4" />
-                WhatsApp
-              </a>
-            </div>
+      {/* ── FINAL CTA ── */}
+      <section className="py-24 px-4 border-t border-white/[0.07]" style={{ background: "linear-gradient(135deg, #3A2F14 0%, #1a1a1c 50%, #111113 100%)" }}>
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <span className="badge-gold">Get in touch</span>
+          <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight">
+            Have a project in mind?<br />Let&apos;s build it together.
+          </h2>
+          <p className="text-base text-zinc-400 max-w-xl mx-auto leading-relaxed">
+            Whether you need a new CRM, School ERP, or custom software built from scratch, our engineers are ready to help.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <Link href="/contact"
+              className="px-8 py-3.5 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors min-h-[48px] flex items-center">
+              Write to us
+            </Link>
+            <a href={siteConfig.whatsapp.url} target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold transition-colors min-h-[48px]">
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp us
+            </a>
+            <a href={siteConfig.phones.primary.tel}
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white hover:border-[#C49A2C]/50 hover:text-[#E3C46A] text-sm transition-all min-h-[48px]">
+              <Phone className="w-4 h-4 text-[#C49A2C]" />
+              {siteConfig.phones.primary.formatted}
+            </a>
           </div>
 
-          <div className="bg-[#18181B] border border-white/[0.07] rounded-panel p-6 space-y-4 text-sm text-zinc-400">
-            <p className="text-white font-medium">Qelvora Technologies — Bengaluru</p>
-            <div className="space-y-2.5">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#C49A2C] shrink-0 mt-0.5" />
-                <span>{siteConfig.address.full}</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#C49A2C] shrink-0" />
-                <span className="font-mono text-white">{siteConfig.phones.primary.formatted} / {siteConfig.phones.secondary.formatted}</span>
-              </div>
-            </div>
-            <div className="pt-3 border-t border-white/[0.07]">
-              <a href={siteConfig.address.googleMapsUrl} target="_blank" rel="noopener noreferrer"
-                className="text-[#C49A2C] hover:text-[#E3C46A] text-xs font-medium flex items-center gap-1 transition-colors">
-                Open in Google Maps <ArrowRight className="w-3 h-3" />
-              </a>
-            </div>
-          </div>
+          <p className="text-xs text-zinc-500 pt-4">
+            Office: {siteConfig.address.full}
+          </p>
         </div>
       </section>
     </>
