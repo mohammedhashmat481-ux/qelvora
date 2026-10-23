@@ -41,10 +41,10 @@ export default function HomePage() {
   return (
     <div className="bg-white text-zinc-900">
       {/* ── HERO ── */}
-      <section className="relative pt-32 pb-24 sm:pt-40 sm:pb-32 px-4 overflow-hidden bg-white border-b border-zinc-200/60">
-        {/* Background 98% transparent watermark logo - centered so it is clearly seen behind the hero */}
+      <section className="relative pt-32 pb-24 sm:pt-40 sm:pb-32 px-4 overflow-hidden bg-black text-white border-b border-white/10">
+        {/* Background gold logo watermark on pure black background */}
         <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] lg:w-[920px] pointer-events-none select-none opacity-[0.07] z-0 flex items-center justify-center"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] lg:w-[960px] pointer-events-none select-none opacity-[0.15] z-0 flex items-center justify-center"
           aria-hidden="true"
         >
           <Image
@@ -57,43 +57,43 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Soft warm-gold ambient glow */}
+        {/* Soft warm-gold ambient glow on black */}
         <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-[#C49A2C]/[0.05] rounded-full blur-[140px] pointer-events-none z-0"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-[#C49A2C]/15 rounded-full blur-[140px] pointer-events-none z-0"
           aria-hidden="true"
         />
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="max-w-3xl space-y-7">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-xs text-[#8C6B18] font-medium">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-[#E3C46A] font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C49A2C] animate-pulse" />
               Bengaluru Software Studio
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-zinc-950 leading-tight tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-tight tracking-tight">
               Innovation today,{" "}
-              <span className="text-[#8C6B18]">advancing tomorrow.</span>
+              <span className="text-[#E3C46A]">advancing tomorrow.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-zinc-600 leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-2xl">
               We build software for schools, colleges, and businesses in India.
               CRM systems, School ERP, College ERP, websites, and mobile apps — all built from scratch, designed for the way you actually work.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link href="/contact"
-                className="px-8 py-3.5 rounded-full bg-[#C49A2C] hover:bg-[#B38622] text-black text-sm font-semibold transition-colors min-h-[48px] flex items-center shadow-sm">
+                className="px-8 py-3.5 rounded-full bg-[#C49A2C] hover:bg-[#E3C46A] text-black text-sm font-semibold transition-colors min-h-[48px] flex items-center shadow-lg">
                 Talk to us
               </Link>
               <a href={siteConfig.phones.primary.tel}
-                className="flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-zinc-300 text-zinc-800 hover:border-[#C49A2C] hover:text-black text-sm transition-all min-h-[48px] bg-white">
+                className="flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-white/20 text-white hover:border-[#C49A2C] hover:text-[#E3C46A] text-sm transition-all min-h-[48px] bg-white/5">
                 <Phone className="w-4 h-4 text-[#C49A2C]" />
                 Call {siteConfig.phones.primary.formatted}
               </a>
             </div>
 
             {/* Quick credibility points */}
-            <div className="pt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-zinc-600">
+            <div className="pt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-zinc-400">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#C49A2C]" /> Direct with developers
               </span>
