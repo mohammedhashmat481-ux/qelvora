@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { AnimatedQMark } from "@/components/brand/AnimatedQMark";
+import Image from "next/image";
 import { siteConfig } from "@/data/site";
 import {
   Phone, MessageCircle, ArrowRight, CheckCircle2,
@@ -89,11 +89,18 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right — Animated Q logo mark */}
+          {/* Right — Official QelVora Gold Emblem */}
           <div className="flex items-center justify-center py-6 lg:py-0">
             <div className="w-64 h-64 sm:w-80 sm:h-80 relative flex items-center justify-center">
-              <div className="absolute inset-0 bg-[#C49A2C]/10 rounded-full blur-3xl pointer-events-none" />
-              <AnimatedQMark className="w-full h-full relative z-10" />
+              <div className="absolute inset-0 bg-[#C49A2C]/15 rounded-full blur-3xl pointer-events-none" />
+              <Image
+                src="/logo-icon.png"
+                alt="Qelvora Technology"
+                width={373}
+                height={373}
+                priority
+                className="w-56 h-56 sm:w-72 sm:h-72 object-contain relative z-10 drop-shadow-[0_10px_25px_rgba(196,154,44,0.25)]"
+              />
             </div>
           </div>
         </div>

@@ -22,15 +22,15 @@ export function Logo({ className, size = "md" }: LogoProps) {
         "inline-flex items-center select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49A2C] rounded-md transition-opacity hover:opacity-95",
         className
       )}
-      aria-label="Qelvora Technologies — Home"
+      aria-label="Qelvora Technology — Home"
     >
       <Image
-        src="/logo-cropped.png"
-        alt="Qelvora Technologies"
-        width={867}
-        height={413}
+        src="/logo.png"
+        alt="Qelvora Technology"
+        width={891}
+        height={373}
         priority
-        className={cn("w-auto object-contain mix-blend-screen", heights[size])}
+        className={cn("w-auto object-contain", heights[size])}
       />
     </Link>
   );
