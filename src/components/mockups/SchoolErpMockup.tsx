@@ -1,93 +1,96 @@
 import React from "react";
+import {
+  CreditCard,
+  UserPlus,
+  CalendarCheck,
+  GraduationCap,
+  MessageCircle,
+  Bus,
+  Check,
+} from "lucide-react";
 
 export function SchoolErpMockup() {
+  const features = [
+    {
+      icon: CreditCard,
+      title: "Fee Collection & Receipts",
+      desc: "Collect school fees, print instant receipts, track pending dues, and send automatic fee reminders to parents.",
+      tag: "Instant receipts",
+    },
+    {
+      icon: CalendarCheck,
+      title: "Daily Attendance & Absent SMS",
+      desc: "Take daily attendance in 1 minute. Parents immediately receive an automated alert if their child is absent.",
+      tag: "Auto parent alert",
+    },
+    {
+      icon: GraduationCap,
+      title: "Report Cards & Marksheets",
+      desc: "Enter test marks once. Automatically calculates grades and prints beautiful CBSE or State Board report cards.",
+      tag: "1-click report cards",
+    },
+    {
+      icon: MessageCircle,
+      title: "Parent WhatsApp Notices",
+      desc: "Send school circulars, homework, holiday notices, and emergency alerts straight to parents' phones.",
+      tag: "Direct to parent",
+    },
+    {
+      icon: UserPlus,
+      title: "Admissions & Student Records",
+      desc: "Manage new admission forms, student profiles, transfer certificates (TC), and parent contacts securely.",
+      tag: "All records safe",
+    },
+    {
+      icon: Bus,
+      title: "Bus & Transport Tracking",
+      desc: "Manage school bus routes, student pickup stops, driver contact details, and transport fees with ease.",
+      tag: "Safe transit",
+    },
+  ];
+
   return (
-    <div className="w-full rounded-panel overflow-hidden border border-white/10 shadow-2xl text-xs font-sans select-none">
-      {/* Window bar */}
-      <div className="bg-[#141416] border-b border-white/[0.08] px-4 py-2.5 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="w-3 h-3 rounded-full bg-[#E3C46A]" />
-          <span className="w-3 h-3 rounded-full bg-white/20" />
-          <span className="w-3 h-3 rounded-full bg-white/10" />
-          <span className="text-[11px] text-zinc-400 ml-2 font-medium">Qelvora School ERP — Academic Session 2026-27</span>
+    <div className="w-full rounded-2xl overflow-hidden border border-white/10 bg-[#141416] shadow-2xl">
+      {/* Header bar */}
+      <div className="bg-[#18181B] border-b border-white/[0.08] px-5 py-3.5 flex items-center justify-between">
+        <div className="flex items-center gap-2.5">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#C49A2C]" />
+          <span className="text-xs font-medium text-white tracking-wide">
+            Qelvora School ERP — Key Features
+          </span>
         </div>
-        <span className="badge-gold text-[10px]">CBSE / State Board Ready</span>
+        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] font-medium text-emerald-400">
+          <Check className="w-3 h-3" /> CBSE / State Board Ready
+        </span>
       </div>
 
-      {/* Stats bar */}
-      <div className="grid grid-cols-3 divide-x divide-white/[0.06] bg-[#141416] border-b border-white/[0.06]">
-        <div className="px-4 py-3">
-          <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-medium">Today&apos;s Attendance</p>
-          <p className="text-sm font-bold text-emerald-400 mt-0.5">97.4% (1,248 / 1,281)</p>
-        </div>
-        <div className="px-4 py-3">
-          <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-medium">Term 2 Fees Collected</p>
-          <p className="text-sm font-bold text-white mt-0.5">₹34,80,500</p>
-        </div>
-        <div className="px-4 py-3">
-          <p className="text-[10px] text-zinc-500 uppercase tracking-wider font-medium">Absent SMS Dispatched</p>
-          <p className="text-sm font-bold text-[#E3C46A] mt-0.5">33 delivered at 09:15 AM</p>
-        </div>
-      </div>
-
-      {/* Table section */}
-      <div className="bg-[#18181B] p-3.5">
-        <div className="flex items-center justify-between mb-3 pb-2.5 border-b border-white/[0.07]">
-          <div className="flex items-center gap-2">
-            <span className="text-[12px] font-semibold text-white">Class 9-A — Morning Attendance & Fee Status</span>
-            <span className="text-[10px] bg-white/10 text-zinc-300 px-2 py-0.5 rounded">38 Enrolled</span>
-          </div>
-          <button className="flex items-center gap-1 text-[10px] text-black bg-[#E3C46A] font-semibold px-3 py-1.5 rounded-full">
-            Send WhatsApp Circular
-          </button>
-        </div>
-
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr className="border-b border-white/[0.08]">
-              <th className="py-2 px-2 text-[10px] font-semibold uppercase tracking-wider text-zinc-500">Roll</th>
-              <th className="py-2 px-2 text-[10px] font-semibold uppercase tracking-wider text-zinc-500">Student Name</th>
-              <th className="py-2 px-2 text-[10px] font-semibold uppercase tracking-wider text-zinc-500">Parent / Contact</th>
-              <th className="py-2 px-2 text-[10px] font-semibold uppercase tracking-wider text-zinc-500 text-center">Status</th>
-              <th className="py-2 px-2 text-[10px] font-semibold uppercase tracking-wider text-zinc-500 text-right">Term-2 Dues</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="border-b border-white/[0.04]">
-              <td className="py-2.5 px-2 font-mono text-zinc-500 text-[11px]">9A-01</td>
-              <td className="py-2.5 px-2 font-semibold text-white text-[11px]">Aarav Sharma</td>
-              <td className="py-2.5 px-2 text-zinc-400 text-[11px]">R. K. Sharma (+91 98450...)</td>
-              <td className="py-2.5 px-2 text-center">
-                <span className="badge-green text-[10px]">✓ Present</span>
-              </td>
-              <td className="py-2.5 px-2 text-right font-mono text-emerald-400 text-[11px] font-medium">Cleared (Receipt #4102)</td>
-            </tr>
-            <tr className="border-b border-white/[0.04]">
-              <td className="py-2.5 px-2 font-mono text-zinc-500 text-[11px]">9A-02</td>
-              <td className="py-2.5 px-2 font-semibold text-white text-[11px]">Bhoomika Hegde</td>
-              <td className="py-2.5 px-2 text-zinc-400 text-[11px]">S. Hegde (+91 97412...)</td>
-              <td className="py-2.5 px-2 text-center">
-                <span className="badge-green text-[10px]">✓ Present</span>
-              </td>
-              <td className="py-2.5 px-2 text-right font-mono text-[#E3C46A] text-[11px] font-medium">Due: ₹3,500 (Bus Fee)</td>
-            </tr>
-            <tr>
-              <td className="py-2.5 px-2 font-mono text-zinc-500 text-[11px]">9A-03</td>
-              <td className="py-2.5 px-2 font-semibold text-white text-[11px]">Chetan Prasad</td>
-              <td className="py-2.5 px-2 text-zinc-400 text-[11px]">M. Prasad (+91 99001...)</td>
-              <td className="py-2.5 px-2 text-center">
-                <span className="badge-red text-[10px]">Absent (SMS Sent)</span>
-              </td>
-              <td className="py-2.5 px-2 text-right font-mono text-emerald-400 text-[11px] font-medium">Cleared</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-white/[0.06] text-[10px] text-zinc-500">
-          <span>Automatic monthly report card generation scheduled for 28th</span>
-          <span className="font-mono">Database sync: Live</span>
-        </div>
+      {/* Features grid */}
+      <div className="p-5 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {features.map((f) => {
+          const Icon = f.icon;
+          return (
+            <div
+              key={f.title}
+              className="p-4 rounded-xl bg-[#18181B] border border-white/[0.06] hover:border-[#C49A2C]/30 transition-all flex flex-col justify-between space-y-3"
+            >
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="w-8 h-8 rounded-lg bg-[#C49A2C]/10 border border-[#C49A2C]/20 flex items-center justify-center text-[#E3C46A]">
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <span className="text-[10px] text-zinc-400 px-2 py-0.5 rounded bg-white/5 border border-white/5 font-medium">
+                    {f.tag}
+                  </span>
+                </div>
+                <h4 className="text-sm font-medium text-white pt-1">{f.title}</h4>
+                <p className="text-xs text-zinc-400 leading-relaxed">{f.desc}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 }
+
+export const SchoolErpFeatures = SchoolErpMockup;
